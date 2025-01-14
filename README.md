@@ -1,6 +1,6 @@
 # XML-shema
 
-This repository stores an XML schema expression of the [SEMIC](https://interoperable-europe.ec.europa.eu/collection/semic-support-centre) assets.
+This repository stores an XML schema expression of the [SEMIC specifications](https://github.com/SEMICeu#-semic-specifications).
 
 SEMIC is focused on semantic interoperability by developing, maintaining and promoting data standards and recommendations. 
 
