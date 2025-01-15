@@ -4,7 +4,7 @@ This page illustrates the rules followed by the XML schema.
 
 ## Schematron Rules
 
-The below table shows the list the schematron rules applied to structure the XML schema:
+The below table shows the list the schematron rules that can be applied to structure the XML schema automatically:
 
 | Rule  | Link |
 | ------------- | ------------- |
