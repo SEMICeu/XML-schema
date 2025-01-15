@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svrl:schematron-output xmlns:svrl="http://purl.oclc.org/dsdl/svrl" title="Rules for reference XML Schema documents" schemaVersion="">
+  <svrl:ns-prefix-in-attribute-values prefix="xs" uri="http://www.w3.org/2001/XMLSchema" />
+  <svrl:ns-prefix-in-attribute-values prefix="xsl" uri="http://www.w3.org/1999/XSL/Transform" />
+  <svrl:ns-prefix-in-attribute-values prefix="nf" uri="http://reference.niem.gov/niem/specification/naming-and-design-rules/5.0/#NDRFunctions" />
+  <svrl:ns-prefix-in-attribute-values prefix="sawsdl" uri="http://www.w3.org/ns/sawsdl" />
+  <svrl:ns-prefix-in-attribute-values prefix="ct" uri="http://release.niem.gov/niem/conformanceTargets/3.0/" />
+  <svrl:ns-prefix-in-attribute-values prefix="xsi" uri="http://www.w3.org/2001/XMLSchema-instance" />
+  <svrl:ns-prefix-in-attribute-values prefix="appinfo" uri="http://release.niem.gov/niem/appinfo/5.0/" />
+  <svrl:ns-prefix-in-attribute-values prefix="structures" uri="http://release.niem.gov/niem/structures/5.0/" />
+  <svrl:active-pattern id="rule_9-10" name="Simple type definition is top-level" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:active-pattern id="rule_9-12" name="Simple type has data definition" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:active-pattern id="rule_9-12-1" name="Simple type has semantic annotation" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:active-pattern id="rule_9-25" name="Complex type definition is top-level" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:active-pattern id="rule_9-26" name="Complex type has data definition" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:active-pattern id="rule_9-12-1" name="Complex type and its elements have semantic annotation" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:fired-rule context="xs:complexType//xs:element" />
+  <svrl:active-pattern id="rule_9-12-1" name="Complex type has semantic annotation" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:fired-rule context="xs:complexType" />
+  <svrl:active-pattern id="rule_9-36" name="Element declaration is top-level" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:fired-rule context="xs:element[exists(@name)]" />
+  <svrl:active-pattern id="rule_9-82" name="Schema has data definition" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:schema" />
+  <svrl:active-pattern id="rule_9-82-2" name="Schema has app info" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:schema" />
+  <svrl:active-pattern id="rule_9-83" name="Schema document defines target namespace" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:schema" />
+  <svrl:active-pattern id="rule_9-85" name="Schema has version" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:schema" />
+  <svrl:active-pattern id="rule_9-85" name="Schema version follows dot-notation" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:schema[exists(@version)]" />
+  <svrl:active-pattern id="rule_9-90" name="xs:import must have namespace" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:active-pattern id="rule_10-46" name="Schema component names have only specific characters" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:active-pattern id="rule_10-49" name="Attribute name begins with lower case letter" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:active-pattern id="rule_10-50" name="Name of schema component other than attribute and proxy type begins with upper case letter" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:fired-rule context="xs:*[exists(@name)]" />
+  <svrl:active-pattern id="rule_11-1" name="Name of type ends in &quot;Type&quot;" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule context="xs:*[(self::xs:simpleType or self::xs:complexType) and exists(@name)]" />
+  <svrl:fired-rule context="xs:*[(self::xs:simpleType or self::xs:complexType) and exists(@name)]" />
+  <svrl:fired-rule context="xs:*[(self::xs:simpleType or self::xs:complexType) and exists(@name)]" />
+  <svrl:fired-rule context="xs:*[(self::xs:simpleType or self::xs:complexType) and exists(@name)]" />
+  <svrl:fired-rule context="xs:*[(self::xs:simpleType or self::xs:complexType) and exists(@name)]" />
+  <svrl:fired-rule context="xs:*[(self::xs:simpleType or self::xs:complexType) and exists(@name)]" />
+  <svrl:active-pattern id="rule_11-3" name="Warning for the use of anyType" document="file:/C:/Users/Public/Documents/OneDrive%20-%20PwC/CoreVoc_20241125/models/CoreVoc_Business/CoreVoc_Business.xsd" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+  <svrl:fired-rule id="rule_11-3" context="xs:element[exists(@type)]" />
+</svrl:schematron-output>
