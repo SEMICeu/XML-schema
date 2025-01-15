@@ -1,7 +1,6 @@
 # Rules
 
-This page illustrates the rules that XML schema provides follows.
-
+This page illustrates the rules followed by the XML schema.
 
 ## Schematron Rules
 
