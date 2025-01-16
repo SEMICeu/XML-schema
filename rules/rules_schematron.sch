@@ -50,7 +50,7 @@
   </sch:rule>
 </sch:pattern>
 
-<sch:pattern id="rule_9-12-1">  
+<sch:pattern id="rule_9-12-2">  
   <sch:title>Complex type and its elements have semantic annotation</sch:title>   
   <sch:rule context="xs:complexType">  
     <sch:assert role="error" test="exists(@sawsdl:modelReference)">  
@@ -63,13 +63,6 @@
     </sch:assert>  
   </sch:rule>  
 </sch:pattern>  
-
-<sch:pattern id="rule_9-12-1"><sch:title>Complex type has semantic annotation</sch:title>
-  <sch:rule context="xs:complexType">
-    <sch:assert role="error" test="exists(@sawsdl:modelReference)">Rule 9-12: A complex type MUST have a semantic annotation.</sch:assert>
-  </sch:rule>
-</sch:pattern>
-
 
 <sch:pattern id="rule_9-36"><sch:title>Element declaration is top-level</sch:title>
   <sch:rule context="xs:element[exists(@name)]">
