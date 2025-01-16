@@ -13,7 +13,7 @@
   	  <html>
   	  	<head>
   	  	<title>Execution Result</title>
-  	  	<link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css"></link>
+  	  	<link rel="stylesheet" href="https://cdn.datatables.net/2.2.1/css/dataTables.dataTables.min.css"></link>
   	  	<style>
   	  	tr td:nth-child(1).error{background: red;} 
   	  	tr td:nth-child(1).warning{background: orange;}
@@ -23,7 +23,7 @@
 		}
   	  	</style>
   	  	<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
-  	  	<script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+  	  	<script type="text/javascript" src="https://cdn.datatables.net/2.2.1/js/dataTables.min.js"></script>
   	  </head>
   	  <body>
       <div>

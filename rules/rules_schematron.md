@@ -36,7 +36,9 @@ The build.xml contains 2 steps:
 1) validate, to validate the XML schema against the schematron Rules, using the open source [ph-schematron](https://github.com/phax/ph-schematron) engine.
 2) report, to transform the report of schematron in HTML reports more easy to understand, using the open source [Saxon-HE](https://github.com/Saxonica/Saxon-HE) XSLT engine.
 
-The output folder contains the schematron report and the HTML reports per XML schema.
+Within the rules folder, an "output" folder is generated containing the schematron report and the HTML reports for each XML schema.
+
+
 
 
 
