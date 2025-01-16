@@ -8,4 +8,6 @@ Technical interoperability involves the technical aspects of data exchange, ensu
 
 An XML schema defines the structure and data types of XML documents, ensuring that data exchanged between systems adheres to a predefined structure, so it is easier to validate and process the data in a consistent and accurate way.
 
+The documentation about the structure of the XML schema can be found [here](./doc/xsd_structure.md)
+
 The rules used to verify the XML schema can be found [here](./rules/rules_schematron.md)
