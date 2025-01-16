@@ -6,26 +6,26 @@ This page illustrates the rules followed by the XML schema.
 
 The below table shows the list the schematron rules that can be applied to structure the XML schema automatically:
 
-| Rule  | Link |
-| ------------- | ------------- |
-| Simple type definition is top-level  | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L23) |
-| Simple type has data definition  | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L29)  |
-| Simple type has semantic annotation | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L35)  |
-| Complex type definition is top-level | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L41)  |
-| Complex type has data definition | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L47)  |
-| Complex type and its elements have semantic annotation | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L53)  |
-| Element declaration is top-level | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L67)  |
-| Schema has data definition | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L73)  |
-| Schema has app info | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L79)  |
-| Schema document defines target namespace  | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L85)  |
-| Schema has version  | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L91)  |
-| Schema version follows dot-notation  | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L97)  |
-| xs:import must have namespace  | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L103)  |
-| Schema component names have only specific characters  | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L109)  |
-| Attribute name begins with lower case letter  | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L115)  |
-| Name of schema component other than attribute and proxy type begins with upper case letter  | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L122)  |
-| Name of type ends in "Type"  | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L134)  |
-| Warning for the use of anyType | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L143)  |
+| Rule  | Rationale | Link |
+| ------------- | ------------- | ------------- |
+| Simple type definition is top-level  | This rule ensures that simple types are defined globals, therefore they can be reused. | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L23) |
+| Simple type has data definition  | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L29)  |
+| Simple type has semantic annotation | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L35)  |
+| Complex type definition is top-level | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L41)  |
+| Complex type has data definition | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L47)  |
+| Complex type and its elements have semantic annotation | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L53)  |
+| Element declaration is top-level | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L67)  |
+| Schema has data definition | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L73)  |
+| Schema has app info | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L79)  |
+| Schema document defines target namespace  | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L85)  |
+| Schema has version  | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L91)  |
+| Schema version follows dot-notation  | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L97)  |
+| xs:import must have namespace  | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L103)  |
+| Schema component names have only specific characters  | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L109)  |
+| Attribute name begins with lower case letter  | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L115)  |
+| Name of schema component other than attribute and proxy type begins with upper case letter  | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L122)  |
+| Name of type ends in "Type"  | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L134)  |
+| Warning for the use of anyType | | [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L143)  |
 
 ### How to execute the Rules
 
