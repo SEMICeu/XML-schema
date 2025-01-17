@@ -1,4 +1,4 @@
-# XML-shema
+# XML-schema
 
 This repository stores an XML schema expression of the [SEMIC specifications](https://github.com/SEMICeu#-semic-specifications).
 
