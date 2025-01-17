@@ -29,7 +29,7 @@ The below table shows the list the schematron rules that can be applied to struc
 
 ### How to execute the Rules
 
-In this repository there is a build.xml file that can be executed by [Apache Ant](https://ant.apache.org/).
+In this repository there is a [build.xml](../build.xml) file that can be executed by [Apache Ant](https://ant.apache.org/).
 Ant is integrated in certain editors, for example within VSCode the user can install the plugin [Ant Target runner](https://marketplace.visualstudio.com/items?itemName=nickheap.vscode-ant).
 
 The build.xml contains 2 steps:
