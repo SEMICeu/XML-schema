@@ -29,14 +29,14 @@ The below table shows the list the schematron rules that can be applied to struc
 
 ### How to execute the Rules
 
-In this repository there is a build.xml file that can be interpreted by [Apache Ant](https://ant.apache.org/).
-Ant is integrated in certain editors, for example within VSCode the user can install the  plugin [Ant Target runner](https://marketplace.visualstudio.com/items?itemName=nickheap.vscode-ant).
+In this repository there is a build.xml file that can be executed by [Apache Ant](https://ant.apache.org/).
+Ant is integrated in certain editors, for example within VSCode the user can install the plugin [Ant Target runner](https://marketplace.visualstudio.com/items?itemName=nickheap.vscode-ant).
 
 The build.xml contains 2 steps:
 1) validate, to validate the XML schema against the schematron Rules, using the open source [ph-schematron](https://github.com/phax/ph-schematron) engine.
 2) report, to transform the report of schematron in HTML reports more easy to understand, using the open source [Saxon-HE](https://github.com/Saxonica/Saxon-HE) XSLT engine.
 
-Within the rules folder, an "output" folder is generated containing the schematron report and the HTML reports for each XML schema.
+At the end of the execution, an "output" folder is generated containing the schematron report and the HTML reports for each XML schema.
 
 
 
