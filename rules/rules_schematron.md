@@ -2,6 +2,12 @@
 
 This page illustrates the rules followed by the XML schema.
 
+## Non-automated rules
+
+| Rule  | Rationale |
+| ------------- | ------------- |
+| Properties/relations belonging to a class should be listed in alphabetical order  | This rule allows the inspection of missing properties/relations while looking at the respective specification, where they are described in alphabetical order |
+
 ## Schematron Rules
 
 The below table shows the list the schematron rules that can be applied to structure the XML schema automatically:
