@@ -10,7 +10,7 @@ XSD Schemas are the main type of validation artefacts provided by
 standardization organizations (e.g. W3C or Oasis). The schemas validate
 that a particular XML document instance fulfils the structural and type
 constraints defined by the standard.
-
+`x = 4`{.ruby}
 The XML documents addressed by the XSD schemas are the SEMIC Core
 Vocabularies:
 
