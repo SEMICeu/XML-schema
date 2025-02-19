@@ -228,10 +228,28 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
                 The unambiguous structured reference for the Legal Entity, which is different from the one denoting its legal status.
             </xs:documentation>
         </xs:annotation>
+
+        <xs:complexContent>
+            <xs:extension base="IdentifierType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        A structured reference that identifies an entity.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element ref="IdentifiesLegalEntity" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/org#hasMember">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                Indicates an agent (person or other organization) who is a member of the subject Organization.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>   
+            </xs:extension>
+        </xs:complexContent>
     </xs:complexType>
 
-    <xs:element name="IdentifiesLegalEntity" type="LegalEntityType"/> 
-    
+    <xs:element name="IdentifiesLegalEntity" type="IdentifierLegalEntityType"/> 
 
 <!-- OrganizationType -->
 
