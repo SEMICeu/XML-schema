@@ -20,7 +20,7 @@
 		<AdminUnitL1 xml:lang="">Belgique</AdminUnitL1>
 		<AdminUnitL2 xml:lang="">Région de Bruxelles-Capitale</AdminUnitL2>
 		<FullAddress xml:lang="">Rue Esseghem 135, 1090 Bruxelles, Belgique</FullAddress>
-		<LocatorDesignator>135</LocatorDesignator>
+		<LocatorDesignatorAddress>135</LocatorDesignatorAddress>
 		<PostCode>1090</PostCode>
 		<PostName xml:lang="">Bruxelles</PostName>
 		<Thoroughfare xml:lang="">Rue Esseghem</Thoroughfare>
