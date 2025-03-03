@@ -14,7 +14,7 @@ constraints defined by the standard.
 The XML documents addressed by the XSD schemas are the SEMIC Core
 Vocabularies:
 
--   Business
+-   [Business](../models/CoreVoc_Business/CoreVoc_Business.xsd)
 -   CCCEV
 -   Location
 -   Person
