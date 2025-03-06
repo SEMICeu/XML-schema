@@ -24,7 +24,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.0
             <dct:contributor>Anastasia Sofou (Trasys International)</dct:contributor>
             <dct:contributor>Kristina Hector (DIaLOGIKa GmbH)</dct:contributor>
             <dct:contributor>Patrick Plewka (DIaLOGIKa GmbH)</dct:contributor>
-            <dct:licence>Licensed under the CC BY 4.0</dct:licence>
+            <dct:license>Licensed under the CC BY 4.0</dct:license>
             <dct:rightsHolder>European Union</dct:rightsHolder>
             <dct:rights>Copyright (C) European Union, 2024</dct:rights>
             <dct:created>2024-10-15</dct:created>
@@ -57,7 +57,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.0
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element ref="Name" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#label">
+            <xs:element ref="UnitName" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#label">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
                         Official, geographical name of the administrative unit, given in different languages where required.
@@ -69,6 +69,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.0
 
     <xs:element name="Code" type="CodeType"/> 
     <xs:element name="Level" type="CodeType"/>
+    <xs:element name="UnitName" type="TextType"/>
 
     
 <!-- GeometryType -->    
@@ -164,14 +165,19 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.0
                 </xs:annotation>
             
                 <xs:sequence>
-                    <xs:element ref="AdminUnit" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/AdminUnit">
+                    <xs:element ref="AdminUnit" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/adminUnit">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">
-                                A detailed administrative unit organized in a hierarchy
+                                The adminUnit relationship links an Address with the Administrative Unit class.
                             </xs:documentation>
                         </xs:annotation>
                     </xs:element>
                     <xs:element ref="HasLocatorDesignator" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/hasLocatorDesignator">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s).
+                            </xs:documentation>
+                        </xs:annotation>
                     </xs:element>
                 </xs:sequence>
             </xs:extension>
@@ -188,7 +194,8 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.0
     <xs:complexType name="LocatorDesignatorType" sawsdl:modelReference="http://inspire.ec.europa.eu/ont/ad#LocatorDesignator">
         <xs:annotation>
             <xs:documentation xml:lang="en">
-                A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators.
+                A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). 
+                The full identification of the locator could include one or more locator designators.
             </xs:documentation>
         </xs:annotation>
     

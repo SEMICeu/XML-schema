@@ -24,7 +24,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.1
             <dct:contributor>Anastasia Sofou (Trasys International)</dct:contributor>
             <dct:contributor>Kristina Hector (DIaLOGIKa GmbH)</dct:contributor>
             <dct:contributor>Patrick Plewka (DIaLOGIKa GmbH)</dct:contributor>
-            <dct:licence>Licensed under the CC BY 4.0</dct:licence>
+            <dct:license>Licensed under the CC BY 4.0</dct:license>
             <dct:rightsHolder>European Union</dct:rightsHolder>
             <dct:rights>Copyright (C) European Union, 2024</dct:rights>
             <dct:created>2024-10-15</dct:created>
@@ -103,7 +103,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.1
     <xs:complexType name="ContactPointPOType" sawsdl:modelReference="http://data.europa.eu/m8g/ContactPoint">
         <xs:annotation>
             <xs:documentation xml:lang="en">
-                hier bin ich mir unsicher
+                Information (e.g. e-mail address, telephone number) of a person or department through which the user can get in touch with.
             </xs:documentation>
         </xs:annotation>
     
@@ -156,14 +156,16 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.1
                     <xs:element ref="HasSubOrganization" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/org#hasSubOrganization">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">
-                                "Represents hierarchical containment of Organizations or OrganizationalUnits
+                                Represents hierarchical containment of Organizations or OrganizationalUnits; 
+                                indicates an organization which is a sub-part or child of this organization.
                             </xs:documentation>
                         </xs:annotation>
                     </xs:element>
                     <xs:element ref="SubOrganizationOf" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/org#subOrganizationOf">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">
-                                "Represents hierarchical containment of Organizations or OrganizationalUnits
+                                Represents hierarchical containment of Organizations or OrganizationalUnits; 
+                                indicates an organization which is a sub-part or child of this organization.
                             </xs:documentation>
                         </xs:annotation>
                     </xs:element>

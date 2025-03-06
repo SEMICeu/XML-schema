@@ -26,7 +26,7 @@
             <dct:contributor>Anastasia Sofou (Trasys International)</dct:contributor>
             <dct:contributor>Kristina Hector (DIaLOGIKa GmbH)</dct:contributor>
             <dct:contributor>Patrick Plewka (DIaLOGIKa GmbH)</dct:contributor>
-            <dct:licence>Licensed under the CC BY 4.0</dct:licence>
+            <dct:license>Licensed under the CC BY 4.0</dct:license>
             <dct:rightsHolder>European Union</dct:rightsHolder>
             <dct:rights>Copyright (C) European Union, 2024</dct:rights>
             <dct:created>2024-10-15</dct:created>
@@ -42,8 +42,7 @@
     <xs:complexType name="JurisdictionType" sawsdl:modelReference="http://purl.org/dc/terms/Jurisdiction">
         <xs:annotation>
             <xs:documentation xml:lang="en">
-                "The limits or territory within which authority may be exercised. The extent or range of judicial, law enforcement, or other authority.
-For this entity the following properties are defined: id , name"
+                The limits or territory within which authority may be exercised.
             </xs:documentation>
         </xs:annotation>
     
@@ -87,7 +86,7 @@ For this entity the following properties are defined: id , name"
 	<xs:complexType name="PersonType" sawsdl:modelReference="http://www.w3.org/ns/person#Person">
 	    <xs:annotation>
 	        <xs:documentation xml:lang="en">
-	            A individual human being who may be dead or alive, but not imaginary
+	            A individual human being who may be dead or alive, but not imaginary.
 	        </xs:documentation>
 	    </xs:annotation> 
         <xs:complexContent>

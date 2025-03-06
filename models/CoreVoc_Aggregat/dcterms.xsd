@@ -135,8 +135,7 @@
    <xs:element name="license" substitutionGroup="rights"/>
 
    <xs:element name="bibliographicCitation" substitutionGroup="identifier"/>
-<!--
-  <xs:complexType name="LCSH">
+   <xs:complexType name="LCSH">
    <xs:simpleContent>
     <xs:restriction base="dc:SimpleLiteral">
         <xs:simpleType>
@@ -375,5 +374,5 @@
       <xs:group ref="elementsAndRefinementsGroup"/>
     </xs:choice>
   </xs:complexType>
--->
+
 </xs:schema>
