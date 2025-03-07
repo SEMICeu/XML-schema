@@ -72,7 +72,7 @@
     <xs:complexType name="LinguisticSystemType" sawsdl:modelReference="http://purl.org/dc/terms/LinguisticSystem"> 
         <xs:annotation>
             <xs:documentation xml:lang="en">
-                The language in which the Public Event is given.
+                A system of signs, symbols, sounds, gestures, or rules used in communication.
             </xs:documentation>
         </xs:annotation>
     </xs:complexType>
