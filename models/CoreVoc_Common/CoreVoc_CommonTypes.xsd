@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema
+
+  xmlns="http://data.europa.eu/m8g/xsd" 
+  targetNamespace="http://data.europa.eu/m8g/xsd" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:dct="http://purl.org/dc/terms/"
+  xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
+  elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">    
+
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="../CoreVoc_common/xml.xsd" />
+
+    <!-- ===== Meta Data==== ================================= -->
+    <xs:annotation>
+        <xs:documentation>Core Common Types Vocabulary</xs:documentation>
+        <xs:appinfo>
+            <dct:title>Core Common Types Vocabulary</dct:title>
+            <dct:description>This XML schema describes the Core Common Types Vocabularies as part of SEMIC Core Vocabularies .</dct:description>
+            <dct:creator>Emidio Stani (PwC Belgium)</dct:creator>
+            <dct:creator>Ine Weyts (PwC Belgium)</dct:creator>
+            <dct:creator>Wolfgang Keber (DIaLOGIKa GmbH)</dct:creator>  
+            <dct:contributor>Pavlina Fragkou (European Commission)</dct:contributor>
+            <dct:contributor>Anastasia Sofou (Trasys International)</dct:contributor>
+            <dct:contributor>Kristina Hector (DIaLOGIKa GmbH)</dct:contributor>
+            <dct:contributor>Patrick Plewka (DIaLOGIKa GmbH)</dct:contributor>
+            <dct:license>Licensed under the CC BY 4.0</dct:license>
+            <dct:rightsHolder>European Union</dct:rightsHolder>
+            <dct:rights>Copyright (C) European Union, 2024</dct:rights>
+            <dct:created>2024-10-15</dct:created>
+        </xs:appinfo>
+    </xs:annotation>
+    
+  <!-- ===== Element Declarations ===== -->
+  
+  <xs:element name="Description" type="TextType"/> 
+  <xs:element name="GenericDate" type="GenericDateType"/> 
+  <xs:element name="Language" type="LinguisticSystemType"/> 
+  <xs:element name="Name" type="xs:string"/> 
+  <xs:element name="Text" type="TextType"/> 
+  <xs:element name="Type" type="CodeType"/> 
+  <xs:element name="AlternativeName" type="TextType"/> 
+  
+  <!-- ===== Type Definitions ===== -->
+
+    <xs:simpleType name="CodeType" sawsdl:modelReference="http://www.w3.org/2004/02/skos/core#Concept"> 
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                An idea or notion; a unit of thought.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" /> 
+    </xs:simpleType>
+
+    <xs:simpleType name="GenericDateType" sawsdl:modelReference="http://data.europa.eu/m8g/GenericDate"> 
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                The date data type is the union of xs:date, xs:gYearMonth and xs:gYear.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:union memberTypes="xs:date xs:gYearMonth xs:gYear" /> 
+    </xs:simpleType>
+
+    <xs:complexType name="InstantType" sawsdl:modelReference="http://www.w3.org/2006/time#Instant"> 
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A temporal entity with zero extent or duration.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+
+    <xs:complexType name="LinguisticSystemType" sawsdl:modelReference="http://purl.org/dc/terms/LinguisticSystem"> 
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A system of signs, symbols, sounds, gestures, or rules used in communication.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+
+    <xs:simpleType name="LiteralType" sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#Literal"> 
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                The class of literal values, eg. textual strings and integers.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string" /> 
+    </xs:simpleType>
+    
+    <xs:complexType name="TextType" sawsdl:modelReference="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"> 
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                The text data type is a combination of a string and a language identifier.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent> 
+            <xs:extension base="xs:string"> 
+                <xs:attribute ref="xml:lang" use="optional" /> 
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+
+</xs:schema>
