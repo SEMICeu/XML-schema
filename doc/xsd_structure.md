@@ -14,12 +14,12 @@ constraints defined by the standard.
 The XML documents addressed by the XSD schemas are the SEMIC Core
 Vocabularies:
 
--   [Business](../models/CoreVoc_Business/CoreVoc_Business.xsd)
--   [CCCEV](../models/CoreVoc_CCCEV/CoreVoc_CCCEV.xsd)
--   [Location](../models/CoreVoc_Location/CoreVoc_Location.xsd)
--   [Person](../models/CoreVoc_Person/CoreVoc_Person.xsd)
--   [Public Event](../models/CoreVoc_Public_Event/CoreVoc_Public_Event.xsd)
--   [Public Organisation](../models/CoreVoc_Public_Organisation/CoreVoc_Public_Organisation.xsd)
+ - [Person](https://semiceu.github.io/Core-Person-Vocabulary/releases/2.1.1/)
+ - [Business](https://semiceu.github.io/Core-Business-Vocabulary/releases/2.2.0/)
+ - [CCCEV](https://semiceu.github.io/CCCEV/releases/2.1.0/)
+ - [Location](https://semiceu.github.io/Core-Location-Vocabulary/releases/2.1.0/)
+ - [Public Event](https://semiceu.github.io/Core-Public-Event-Vocabulary/releases/1.1.0/)
+ - [Public Organization](https://semiceu.github.io/CPOV/releases/2.1.1/)
 
 The document at hand describes the structure of a number of XSD files
 which can be used to validate the structure and vocabulary of the SEMIC
