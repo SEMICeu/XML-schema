@@ -10,4 +10,4 @@ An XML schema defines the structure and data types of XML documents, ensuring th
 
 The documentation about the structure of the XML schema can be found in the [doc](./doc/xsd_structure.md) folder.
 
-The rules used to verify the XML schema can be found in the [rules](./rules/rules_schematron.md) folder.
+The rules used to verify the XML schema can be found in the [rules](./rules/rules.md) folder.
