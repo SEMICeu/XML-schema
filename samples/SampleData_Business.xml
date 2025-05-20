@@ -11,8 +11,8 @@
 		<HasTelephone>+32 2 230 59 70</HasTelephone>
 	</ContactPoint>
 	<IdentifierLegalEntity>
-        <Notation>0407.562.029</Notation>
-    </IdentifierLegalEntity>
+                <Notation>0407.562.029</Notation>
+        </IdentifierLegalEntity>
 	<LegalEntityActivity>http://data.europa.eu/ux2/nace2.1/9499</LegalEntityActivity>
 	<LegalFormType>gl-c-3d9a96e91d2af17bc2d4ca176bb53938</LegalFormType>
 	<LegalIdentifierLegalEntity/>
