@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Resource xmlns="http://data.europa.eu/m8g/xsd" xmlns:dct="http://purl.org/dc/terms/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		  xsi:schemaLocation="http://data.europa.eu/m8g/xsd ../CoreVoc_Location/CoreVoc_Location.xsd">
+		  xsi:schemaLocation="http://data.europa.eu/m8g/xsd ../models/CoreVoc_Location/CoreVoc_Location.xsd">
 	<HasAddress>
 		<AddressArea xml:lang="fr">Province de Hainaut</AddressArea>
 		<AdminUnitL1 xml:lang="fr">Belgique</AdminUnitL1>

@@ -3,7 +3,7 @@
 <PublicOrganization xmlns="http://data.europa.eu/m8g/xsd"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://data.europa.eu/m8g/xsd 
-    ..\CoreVoc_Public_Organization\CoreVoc_Public_Organization.xsd">
+    ../models/CoreVoc_Public_Organization/CoreVoc_Public_Organization.xsd">
 
 	<Address>
         <AddressArea xml:lang="fr">Province de Hainaut</AddressArea>

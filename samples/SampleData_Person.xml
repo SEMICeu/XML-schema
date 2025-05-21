@@ -2,7 +2,7 @@
 
 <Person xmlns="http://data.europa.eu/m8g/xsd"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://data.europa.eu/m8g/xsd ../CoreVoc_Person/CoreVoc_Person.xsd">
+    xsi:schemaLocation="http://data.europa.eu/m8g/xsd ../models/CoreVoc_Person/CoreVoc_Person.xsd">
 
 	<BirthName xml:lang="FR">René François Ghislain Magritte</BirthName>
 	<CountryOfBirth>
