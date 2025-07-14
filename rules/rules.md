@@ -106,7 +106,7 @@ The below table shows the list the schematron rules that can be applied to struc
 | XML schema element declaration MUST be: ... &lt;?xml version="1.0" encoding="UTF-8"?&gt;...| "<?xml …" is called XML declaration. It is used for all kinds  of XML files, not only for schemas.| [link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L67)  |
 | The XML document must be xs:schema. | Note: Using "xs" as the namespace prefix is not mandatory. It depends on the namespace definition and could also be "xsd". |[link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L85) |
 | UpperCamelCase convention | The UpperCamelCase (UCC) convention must be used for naming elements and types.  |[link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L122) |
-| lowerCamelCase (LCC) convention | The lowerCamerCase (LCC) convention must be used for attributes. |[link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L115) | 
+| lowerCamelCase convention | The lowerCamerCase (LCC) convention must be used for attributes. |[link](https://github.com/SEMICeu/XML-schema/blob/main/rules/rules_schematron.sch#L115) | 
 
 
 ## How to execute the Rules
