@@ -45,22 +45,6 @@
         <cv:EvidenceTypeClassification>certificate</cv:EvidenceTypeClassification>
         <cv:IdentifierLiteral>evt-123</cv:IdentifierLiteral>
     </AP:HasInputType>
-
-    <AP:HasParticipation>
-    	<cv:Description></cv:Description>
-    	<AP:HasParticipant>
-    		<cv:Address>
- 				<cv:AddressArea>
- 				</cv:AddressArea>
-    		</cv:Address>
-    		<cv:AgentName>
-    		</cv:AgentName>
-    		<cv:IdentifierLiteral>
-    		</cv:IdentifierLiteral>
-    	</AP:HasParticipant>
-    	<cv:IdentifierLiteral></cv:IdentifierLiteral>
-    	<cv:Role></cv:Role>
-    </AP:HasParticipation>
     
     <AP:HoldsRequirement>
         <AP:HasSupportingEvidence>
