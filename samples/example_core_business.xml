@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LegalEntity
+    xmlns="http://data.europa.eu/m8g/xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://data.europa.eu/m8g/xsd ../CoreVoc_Business/CoreVoc_Business.xsd">
+
+    <ContactPointBase xsi:type="ContactPointType">
+        <HasEmail>info@unicef.be</HasEmail>
+        <HasTelephone>+32 2 230 59 70</HasTelephone>
+    </ContactPointBase>
+    
+    <HasAccountingDocument>https://consult.cbso.nbb.be/api/external/broker/public/deposits/pdf/cc971deb-e4e6-11ed-aeda-4b1195f209e0</HasAccountingDocument>
+    
+    <LegalEntityActivity>94.99</LegalEntityActivity>
+	<LegalFormType>ZUHK</LegalFormType>
+
+    <LegalIdentifierLegalEntity xsi:type="IdentifierLegalEntityType">
+        <Notation>0407.562.029</Notation>
+        <SchemaAgency xml:lang="fr">Banque-Carrefour des Entreprises (BCE)</SchemaAgency>
+        <SchemeName xml:lang="fr">numéro d'entreprise</SchemeName>
+        <SchemeURI>https://economie.fgov.be/fr/themes/entreprises/banque-carrefour-des/actualites/structure-du-numero</SchemeURI>
+    </LegalIdentifierLegalEntity>
+
+    <LegalName xml:lang="fr">Comité belge pour l'UNICEF</LegalName>
+    <LegalName xml:lang="nl">Belgisch Comite voor UNICEF</LegalName>
+
+    <RegisteredAddress xsi:type="AddressType">
+        <AdminUnitL1 xml:lang="fr">Belgique</AdminUnitL1>
+        <AdminUnitL2 xml:lang="fr">Région de Bruxelles-Capitale</AdminUnitL2>
+        <FullAddress xml:lang="fr">Rue Picard 7/306, 1000 Bruxelles, Belgique</FullAddress>
+        <LocatorDesignatorAddress>7/306</LocatorDesignatorAddress>
+        <PostCode>1000</PostCode>
+        <PostName xml:lang="fr">Bruxelles</PostName>
+        <Thoroughfare xml:lang="fr">Rue Picard</Thoroughfare>
+    </RegisteredAddress>
+    
+    <RegistrationDate>1952-09-27</RegistrationDate>
+
+</LegalEntity>

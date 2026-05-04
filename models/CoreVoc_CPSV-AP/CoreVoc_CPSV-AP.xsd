@@ -1,0 +1,1126 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+
+targetNamespace="https://semiceu.github.io/CPSV-AP/xsd"
+xmlns="https://semiceu.github.io/CPSV-AP/xsd"
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:cpsv="http://purl.org/vocab/cpsv/xsd"
+xmlns:cv="http://data.europa.eu/m8g/xsd"
+xmlns:dct="http://purl.org/dc/terms/"   
+xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
+xmlns:xml="http://www.w3.org/XML/1998/namespace"
+elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.2.0">
+ 
+    <xs:import namespace="http://data.europa.eu/m8g/xsd" 
+               schemaLocation="../CoreVoc_Assembly/CoreVoc_Assembly.xsd" />
+               
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+               schemaLocation="../CoreVoc_Common/xml.xsd"/>
+    
+    <xs:import namespace="http://purl.org/vocab/cpsv/xsd"
+               schemaLocation="CoreVoc_CPSV-NOAP.xsd"/>
+
+    <xs:annotation>
+        <xs:documentation>Core Public Service Vocabulary Application Profile(CPSV-AP)</xs:documentation>
+        <xs:appinfo>
+            <dct:title>Core Public Service Vocabulary Application Profile(CPSV-AP)</dct:title>
+            <dct:description>CPSV-AP provides a minimal common basis within Europe to describe public services.</dct:description>
+            <dct:creator>Emidio Stani (emidio.stani@pwc.com)</dct:creator>
+            <dct:creator>Wolfgang Keber (Wolfgang.Keber@dialogika.de)</dct:creator>
+            <dct:contributor>Pavlina Fragkou (European Commission)</dct:contributor>
+            <dct:contributor>Anastasia Sofou (Trasys International)</dct:contributor>
+            <dct:contributor>Kristina Hector (DIaLOGIKa GmbH)</dct:contributor>
+            <dct:contributor>Patrick Plewka (DIaLOGIKa GmbH)</dct:contributor>
+            <dct:licence>Licensed under the CC BY 4.0</dct:licence>
+            <dct:rightsHolder>European Union</dct:rightsHolder>
+            <dct:copyright>Copyright (C) European Union, 2025</dct:copyright>
+            <dct:status>In progress</dct:status>
+            <dct:created>2025-06-02</dct:created>
+        </xs:appinfo>
+    </xs:annotation>
+    
+    <xs:element name="PublicServiceCPSVAP" type="PublicServiceType"/>
+   
+    <xs:complexType name="PublicServiceType" sawsdl:modelReference="http://purl.org/vocab/cpsv#PublicService">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A Public Service is a mandatory or discretionary set of activities performed, or able to be performed, 
+                by or on behalf of a public organisation, publicly funded and arise from public policy.
+            </xs:documentation>
+        </xs:annotation>
+    
+        <xs:sequence>
+            <xs:element ref="Addressee" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/audience">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        The target recipient of the Public Service.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="ContactPoint" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/contactPoint">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        The main contact information of the resource.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="cv:Description" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/description">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        A free text Description of the Public Service.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="Follows" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#follows">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        It links a Public Service to the Rule(s) under which it operates.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="FunctionsOfGovernment" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/type">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        The purpose of a government activity, which the public service is intended for.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="HasChannel" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/hasChannel">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        It links the Public Service to any Channel through which an Agent provides, uses or otherwise interacts 
+                        with the Public Service, such as an online service, phone number or office.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="HasCompetentAuthority" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/hasCompetentAuthority">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        It links a Public Service to a Public Organization, which is the responsible Agent for the delivery of the Public Service.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="HasCost" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/hasCost">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        It indicates the costs related to the execution of a Public Service for the citizen or business related to the execution of the particular Public Service.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="HasInput" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#hasInput">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        It links a Public Service to one or more instances of the Evidence class.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="HasInputType" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/hasInputType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        It links a Public Service to one or more instances of the EvidenceType class.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="HasLegalResource" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/hasLegalResource">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        It indicates the Legal Resource (e.g. legislation) to which the Public Service relates, operates or has its legal basis.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="HasParticipation" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/hasParticipation">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        The way how a resource is organized.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="HoldsRequirement" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/holdsRequirement">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        It links a Public Service to a class that describes the Requirement.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="cv:IdentifierLiteral" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        A formally-issued Identifier for the Public Service.
+                     </xs:documentation>    
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="IsClassifiedBy" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/isClassifiedBy">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        It allows to classify the Public Service with any Concept other than those already foreseen and 
+                        defined explicitly in the CPSV-AP (Thematic Area, Sector, etc.).
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="IsGroupedBy" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/isGroupedBy">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        It links the Public Service to the Event class.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="IsPartOf" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/isPartOf">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        A related resource in which the described resource is physically or logically included.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="Keyword" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/dcat#keyword">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        A keyword, term or phrase to describe the Public Service.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="cv:Language" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/language">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        The language(s) in which the Public Service is available.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="Name" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/title">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        The official Name of the Public Service.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="ProcessingTime" minOccurs="0" maxOccurs="1" sawsdl:modelReference="http://data.europa.eu/m8g/processingTime">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        The (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="Produces" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#produces">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        It links a Public Service to one or more instances of the Output class, describing the actual result of executing a given Public Service.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="RelatedService" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/relatedService">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        A Public Service related to the particular instance of the Public Service class.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="Requires" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/requires">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        The way a Public Service makes use of other Public Services.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="Sector" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/sector">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        The industry or sector a Public Service relates to, or is intended for.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="cv:Spatial" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/spatial">
+                <xs:annotation>
+                   <xs:documentation xml:lang="en">
+                         A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority.
+                   </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="Status" minOccurs="0" maxOccurs="1" sawsdl:modelReference="http://www.w3.org/ns/adms#status">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        It indicates whether a Public Service is active, inactive, under development etc. according to a controlled vocabulary.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="ThematicArea" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/thematicArea">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        The Thematic Area of a Public Service.
+                     </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    
+    <xs:element name="Name" type="cv:TextType" />
+    <xs:element name="Addressee" type="cv:CodeType"/>
+    <xs:element name="Follows" type="RuleType"/>
+    <xs:element name="FunctionsOfGovernment" type="cv:CodeType"/>
+    <xs:element name="HasChannel" type="ChannelType"/>
+    <xs:element name="HasCompetentAuthority" type="PublicOrganizationCPSVAPType"/>
+    <xs:element name="HasCost" type="CostType"/>
+    <xs:element name="HasInput" type="EvidenceType"/>
+    <xs:element name="HasInputType" type="EvidenceTypeCPSVAPType"/>
+    <xs:element name="HasLegalResource" type="LegalResourceType"/>
+    <xs:element name="HasParticipation" type="ParticipationType"/>
+    <xs:element name="HoldsRequirement" type="RequirementType"/>
+    <xs:element name="IsClassifiedBy" type="ConceptType"/>
+    <xs:element name="IsGroupedBy" type="EventType"/>
+    <xs:element name="IsPartOf" type="DatasetType"/>
+    <xs:element name="Keyword" type="cv:TextType"/>
+    
+    <xs:element name="ProcessingTime" type="xs:duration"/>
+    <xs:element name="Produces" type="OutputType"/>
+    <xs:element name="RelatedService" type="PublicServiceType"/>
+    <xs:element name="Requires" type="PublicServiceType"/>
+    <xs:element name="Sector" type="cv:CodeType"/>
+
+    <xs:element name="Spatial" type="cv:LocationType"/>
+    <xs:element name="Status" type="cv:CodeType"/>
+    <xs:element name="ThematicArea" type="cv:CodeType"/>
+
+<!--  Agent --> 
+
+    <xs:complexType name="AgentCPSVAPType" sawsdl:modelReference="http://xmlns.com/foaf/0.1/Agent">
+    	<xs:annotation>
+            <xs:documentation xml:lang="en">
+                The Agent class is any resource that acts or has the power to act. This includes people, organisations and groups. The Public Organization class, defined in the Core Public Organisation Vocabulary, is a notable subclass of Agent.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="cv:AgentBaseType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        The Agent class is any resource that acts or has the power to act. This includes people, organisations and groups. The Public Organization class, 
+                        defined in the Core Public Organisation Vocabulary, is a notable subclass of Agent.
+                    </xs:documentation>
+                </xs:annotation>
+            
+                <xs:sequence>
+                    <xs:element ref="cv:Address" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/locn#address">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                An Address related to an Agent. Asserting the address relationship implies that the Agent has an Address.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element ref="cv:AgentName" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/title">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                The noun given to the Agent.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element ref="cv:IdentifierLiteral" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                An Identifier for the Agent.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element ref="Participates" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/participates">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                The participation in which an Agent is involved.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="Participates" type="ParticipationType"/>
+
+<!--  Channel --> 
+
+    <xs:complexType name="ChannelType" sawsdl:modelReference="http://data.europa.eu/m8g/Channel">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A medium through which an Agent provides, uses or interacts in another way with a Public Service.
+            </xs:documentation>
+        </xs:annotation>
+
+        
+        <xs:sequence>
+            <xs:element ref="AvailabilityRestriction" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/specialOpeningHoursSpecification">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        A time during which the resource is not available.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="cv:Description" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/description">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A free text description of the Channel, for example to describe conditions when to use it.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="HasInput" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#hasInput">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The property links a Public Service directly to one or more pieces of Evidence.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="cv:IdentifierLiteral" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	An Identifier for the Channel.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="OpeningHours" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/openingHours">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A time at which the resource is normally available.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="OwnedBy" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/ownedBy">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The owner of a specific Channel through which a Public Service is being delivered.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="ProcessingTime" minOccurs="0" maxOccurs="1" sawsdl:modelReference="http://data.europa.eu/m8g/processingTime">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The (estimated) time needed for executing a Public Service which may depend on the Channel chosen.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="cv:Type" minOccurs="0" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/type">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The type of Channel as defined in a controlled vocabulary.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="AvailabilityRestriction" type="cv:TemporalEntityType"/> 
+    <xs:element name="OpeningHours" type="cv:TemporalEntityType"/>
+    <xs:element name="OwnedBy" type="cv:OrganizationType"/>
+
+<!--  Collection --> 
+
+
+    <xs:complexType name="CollectionType" sawsdl:modelReference="http://www.w3.org/2004/02/skos/core#Collection">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This class represent the way Concepts belong together. Thus, different concepts are grouped and define a controlled vocabulary.
+            </xs:documentation>
+        </xs:annotation>    
+
+        <xs:sequence>
+            <xs:element ref="Member" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/2004/02/skos/core#member">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	It indicates the Concepts that are part of the Collection.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="Collection" type="CollectionType" />
+    <xs:element name="Member" type="ConceptType"/> 
+
+<!--  Concept --> 
+
+    <xs:complexType name="ConceptType" sawsdl:modelReference="http://www.w3.org/2004/02/skos/core#Concept">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This class represents any concept that can be used for classifying the Public Service and which relates to the Public Service through the property Is Classified By.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+
+    <xs:element name="Concept" type="ConceptType"/>    
+   
+<!--  ConcessionContract --> 
+
+    <xs:complexType name="ConcessionContractType" sawsdl:modelReference="http://data.europa.eu/a4g/ontology#ConcessionContract">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A contract between one or more buyers and one or more economic operators giving the right to the economic operators to exploit the rights foreseen in the contract which may include the receipt of payments.
+            </xs:documentation>
+        </xs:annotation>    
+    </xs:complexType>
+    
+    <xs:element name="ConcessionContract" type="ConcessionContractType" />
+<!--  Cost --> 
+
+    <xs:complexType name="CostType" sawsdl:modelReference="http://data.europa.eu/m8g/Cost"
+>
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                The Cost class represents any costs related to the execution of a Public Service that the Agent consuming it needs to pay.
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:sequence>
+            <xs:element ref="Currency" minOccurs="0" maxOccurs="1" sawsdl:modelReference="http://data.europa.eu/m8g/currency">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The currency in which the Cost needs to be paid and the value of the Cost is expressed.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="cv:Description" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/description">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A free text description of the Cost.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="HasValue" minOccurs="0" maxOccurs="1" sawsdl:modelReference="http://data.europa.eu/m8g/hasValue">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A numeric value indicating the amount of the Cost.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="cv:IdentifierLiteral" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	An Identifier for the Cost.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="IfAccessedThrough" minOccurs="0" maxOccurs="1" sawsdl:modelReference="http://data.europa.eu/m8g/ifAccessedThrough">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                            The costs created by the use of different Channels.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="IsDefinedBy" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/isDefinedBy">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	It links the Cost class to one or more instances of the Organization class.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="Currency" type="cv:CodeType"/>
+    <xs:element name="HasValue" type="xs:double"/>
+    <xs:element name="IfAccessedThrough" type="ChannelType"/>
+    <xs:element name="IsDefinedBy" type="cv:OrganizationType"/>
+
+<!--  Dataset --> 
+
+    <xs:complexType name="DatasetType" sawsdl:modelReference="http://www.w3.org/ns/dcat#Dataset">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A collection of data, published or curated by a single agent, and available for access or download in one or more representations.
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:sequence>
+            <xs:element ref="cv:Description" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/description">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A free-text account of the Dataset. This property can be repeated for parallel language versions of the description.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="HasPart" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/hasPart">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A related resource that is included either physically or logically in the described resource.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="cv:IdentifierLiteral" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        The main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="LandingPage" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/dcat#landingPage">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A web page that provides access to the Dataset, its Distributions and/or additional information.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="Publisher" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/publisher">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The Publisher of the Dataset, i.e. an entity (organisation) responsible for making the Dataset available.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="Title" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/title">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A name given to the Dataset.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+        </xs:sequence>
+    </xs:complexType>
+
+	<xs:element name="Dataset" type="DatasetType" />
+	
+    <xs:element name="Agent" type="AgentCPSVAPType"/>
+    <xs:element name="HasPart" type="PublicServiceType"/>
+    <xs:element name="LandingPage" type="cv:DocumentType"/>
+    <xs:element name="Publisher" type="AgentCPSVAPType"/>
+    <xs:element name="Title" type="cv:TextType"/>
+            
+<!--  Evidence -->
+
+    <xs:complexType name="EvidenceType" sawsdl:modelReference="http://data.europa.eu/m8g/Evidence">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Proof that a Requirement is met.
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:sequence>
+            <xs:element ref="cv:Description" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/description">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A free text Description of the piece of Evidence.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="cv:IdentifierLiteral" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	An Identifier for the piece of Evidence.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="IsConformantTo" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/conformsTo">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	Evidence Type that specifies characteristics of the Evidence.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="IsPartOf" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/isPartOf">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A related resource in which the described resource is physically or logically included.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="cv:Language" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/language">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The language(s) of the piece of Evidence.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="cv:Name" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/title">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The official Name of the piece of Evidence.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="RelatedDocumentation" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://xmlns.com/foaf/0.1/page">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The documentation that contains information.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="SupportsRequirement" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/supportsRequirement">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	Requirement for which the Evidence provides proof.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="cv:Type" minOccurs="0" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/type">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The type of Evidence as described in a controlled vocabulary.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="IsConformantTo" type="EvidenceTypeCPSVAPType"/>
+    <xs:element name="RelatedDocumentation" type="cv:DocumentType"/>
+    <xs:element name="SupportsRequirement" type="RequirementType"/>
+    
+    <xs:element name="ContactPoint" type="ContactPointCPSVAPType" />
+   <!--  ContactPointType --> 
+    <xs:complexType name="ContactPointCPSVAPType" sawsdl:modelReference="http://data.europa.eu/m8g/ContactPoint">
+		<xs:annotation>
+            <xs:documentation xml:lang="en">
+                Information (e.g. e-mail address, telephone number) of a person or department through which the user can get in touch with.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="cv:ContactPointType">
+                <xs:sequence>
+                    <xs:element ref="AvailabilityRestriction" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/specialOpeningHoursSpecification" />
+                    <xs:element ref="OpeningHours" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/openingHours" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+<!--  EvidenceTypeType --> 
+    <xs:complexType name="EvidenceTypeCPSVAPType" sawsdl:modelReference="http://data.europa.eu/m8g/EvidenceType">
+		<xs:annotation>
+            <xs:documentation xml:lang="en">
+                Information about the characteristics of an Evidence.
+            </xs:documentation>
+        </xs:annotation>    
+        <xs:complexContent>
+            <xs:extension base="cv:EvidenceTypeBaseType">
+                <xs:sequence>
+                    <xs:element ref="cv:EvidenceTypeClassification" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/evidenceTypeClassification"/>
+                    <xs:element ref="cv:IdentifierLiteral" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/identifier"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+   <!--  LegalResource -->    
+    
+  <xs:complexType name="LegalResourceType" sawsdl:modelReference="http://data.europa.eu/eli/ontology#LegalResource">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This class represents the legislation, policy or policies that lie behind the Rules that govern the service.
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:sequence>
+            <xs:element ref="Related" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/relation">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	Another instance of the Legal Resource class that is related to the particular Legal Resource being described.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="Related" type="LegalResourceType"/>
+<!--  Event -->    
+
+    <xs:complexType name="EventType" sawsdl:modelReference="http://data.europa.eu/m8g/Event">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This class represents an event that can be of any type that triggers, makes use of, or in some way is related to, a Public Service.
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:sequence>
+            <xs:element ref="cv:Description" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/description">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A free text description of the Event.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="HasRelatedService" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/hasRelatedService">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The Public Service related to the Event.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="cv:IdentifierLiteral" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	An Identifier for the Event.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+            <xs:element ref="Name" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/title">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The Name (or title) of the Event.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>   
+        </xs:sequence>
+    </xs:complexType>
+   
+
+    <xs:element name="HasRelatedService" type="PublicServiceType" />
+    
+    <xs:element name="Event" type="EventType"/>
+        
+<!--  LifeEvent -->
+    
+    <xs:complexType name="LifeEventType" sawsdl:modelReference="http://data.europa.eu/m8g/LifeEvent">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                The Life Event class represents an important event or situation in a citizen's life where public services are required.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="EventType">
+				<xs:sequence>
+					<xs:element ref="cv:Type" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/type">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+								It links an Event to a controlled vocabulary of event types.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="LifeEvent" type="LifeEventType"/>
+
+    <xs:complexType name="BusinessEventType" sawsdl:modelReference="http://data.europa.eu/m8g/BusinessEvent">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A Business Event is a specific situation or event in the lifecycle of a business that fulfils one or more needs or (legal) obligations of that business at this specific point in time.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="EventType">
+				<xs:sequence>
+					<xs:element ref="cv:Type" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/type">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+								It links an Event to a controlled vocabulary of event types.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="BusinessEvent" type="BusinessEventType"/>
+    
+<!--  Output --> 
+
+  <xs:complexType name="OutputType" sawsdl:modelReference="http://data.europa.eu/m8g/Output">
+ 
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                An output can be any resource - document, artefact - anything produced by the Public Service. In the context of a Public Service, the output provides an official document or other artefact of the Competent Authority (Public Organization) that permits/authorises/entitles an Agent to (do) something.
+            </xs:documentation>
+        </xs:annotation>
+        
+        <xs:sequence>
+            <xs:element ref="cv:Description" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/description">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A free text Description of the Output.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="cv:IdentifierLiteral" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	An Identifier for the Output.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="IsPartOf" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/isPartOf">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	A related resource in which the described resource is physically or logically included.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="cv:Language" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/language">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The language(s) in which the Output is available.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="Name" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/title">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The official Name of the Output.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element ref="cv:Type" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/type">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        	The type of Output as defined in a controlled vocabulary.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+            
+
+<!--  Public Organization --> 
+
+    <xs:complexType name="PublicOrganizationCPSVAPType" sawsdl:modelReference="http://data.europa.eu/m8g/PublicOrganisation"> 
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                An Organization that is defined as being part of the public sector by a legal framework at any level.
+            </xs:documentation>
+        </xs:annotation>
+
+         <xs:complexContent>
+            <xs:extension base="cv:PublicOrganizationBaseType">
+                <xs:sequence>
+                    <xs:element ref="cv:PreferredLabel" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/2004/02/skos/core#prefLabel">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                A preferred label is used to provide the primary, legally recognised name of the Public Organization, as defined in the ORG Ontology.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element ref="cv:Spatial" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/spatial">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                It links an Organization to the Administrative Region(s) that it covers.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+               </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+<!--  Participation --> 
+
+  <xs:complexType name="ParticipationType" sawsdl:modelReference="http://data.europa.eu/m8g/Participation">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                The Participation class allows to define roles within a certain context.
+            </xs:documentation>
+        </xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="cv:ParticipationBaseType">
+				<xs:sequence>
+		            <xs:element ref="cv:Description" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/description">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        	A textual explanation of the Participation.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		            <xs:element ref="HasParticipant" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://data.europa.eu/m8g/hasParticipant">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        	The Agent involved in the Participation.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		            <xs:element ref="cv:IdentifierLiteral" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        	The unambiguous structured reference for the Participation.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		            <xs:element ref="cv:Role" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/role">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        	The function of an Agent within a Participation.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		        </xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+    </xs:complexType>
+            
+    <xs:element name="HasParticipant" type="AgentCPSVAPType"/>
+
+<!--  Requirement --> 
+
+  <xs:complexType name="RequirementType" sawsdl:modelReference="http://data.europa.eu/m8g/Requirement">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Condition or prerequisite that is to be proven by Evidence.
+            </xs:documentation>
+        </xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="cv:RequirementBaseType">
+				<xs:sequence>
+		            <xs:element ref="Fulfils" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/fulfils">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        	The Rules that the requirements fulfils.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		            <xs:element ref="HasSupportingEvidence" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/hasSupportingEvidence">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        	Evidence that supplies information, proof or support for the Requirement.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		            <xs:element ref="cv:IdentifierLiteral" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        	Unambiguous reference to a Requirement.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		            <xs:element ref="cv:Name" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/title">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        	Name of the Requirement.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		            <xs:element ref="cv:Type" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/type">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        	Category to which the Requirement belongs.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		        </xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+    </xs:complexType>
+            
+    <xs:element name="Fulfils" type="RuleType"/>
+    <xs:element name="HasSupportingEvidence" type="EvidenceType"/>
+
+<!--  Rule -->    
+    
+        <xs:complexType name="RuleType" sawsdl:modelReference="http://purl.org/vocab/cpsv#Rule">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows.
+                </xs:documentation>
+            </xs:annotation>
+        	<xs:complexContent>
+        		<xs:extension base="cpsv:RuleBaseType">
+		        	<xs:sequence>
+		                <xs:element ref="cv:Description" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/description">
+		                    <xs:annotation>
+		                        <xs:documentation xml:lang="en">
+		                            A free text Description of the Rule.
+		                        </xs:documentation>
+		                    </xs:annotation>
+		                </xs:element>
+		                <xs:element ref="cv:IdentifierLiteral" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+		                    <xs:annotation>
+		                        <xs:documentation xml:lang="en">
+		                            An Identifier for the Rule.
+		                        </xs:documentation>
+		                    </xs:annotation>
+		                </xs:element>
+		                <xs:element ref="ImplementsCPSVAP" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#implements">
+		                    <xs:annotation>
+		                        <xs:documentation xml:lang="en">
+		                            It links a Rule to relevant legislation or policy documents i.e. the Legal Resource under which the Rules are being defined.
+		                        </xs:documentation>
+		                    </xs:annotation>
+		                </xs:element>
+		                <xs:element ref="cv:Language" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/language">
+		                    <xs:annotation>
+		                        <xs:documentation xml:lang="en">
+		                            The language(s) in which the Rule is available.
+		                        </xs:documentation>
+		                    </xs:annotation>
+		                </xs:element>
+		                <xs:element ref="Name" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/title">
+		                    <xs:annotation>
+		                        <xs:documentation xml:lang="en">
+		                            The Name of the Rule.
+		                        </xs:documentation>
+		                    </xs:annotation>
+		                </xs:element>
+		                <xs:element ref="cv:Type" minOccurs="0" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/type">
+		                    <xs:annotation>
+		                        <xs:documentation xml:lang="en">
+		                            Type of Rule.
+		                        </xs:documentation>
+		                    </xs:annotation>
+		                </xs:element>
+		            </xs:sequence>
+        		</xs:extension>
+        	</xs:complexContent>
+        </xs:complexType>
+
+        <xs:element name="ImplementsCPSVAP" type="LegalResourceType"/>  
+
+<!--  ServiceConcessionContract -->    
+    
+    <xs:complexType name="ServiceConcessionContractType" sawsdl:modelReference="http://data.europa.eu/m8g/ServiceConcessionContract">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Concessions are contracts for pecuniary interest by means of which one or more contracting authorities or 
+                contracting entities entrusts the execution of works, or the provision and the management of services, to one or more economic operators.
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:complexContent>
+            <xs:extension base="ConcessionContractType">
+                <xs:sequence>
+
+                    <xs:element ref="cv:Description" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/description">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                A free text description of the Service Concession Contract.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element ref="EstablishedUnder" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/establishedUnder">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                It links a Service Concession Contract to relevant legislation or policy documents i.e. the Legal Resource
+                                under which the Service Concession Contracts are being defined.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element ref="HasContractingAuthority" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/hasContractingAuthority">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                It links a Service Concession Contract with the Contracting Authority which is ultimately responsible for a public service.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element ref="HasEconomicOperator" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/hasEconomicOperator">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                It links a Service Concession Contract with the Economic Operator in charge for the provision and the management of public services.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element ref="cv:IdentifierLiteral" minOccurs="1" maxOccurs="1" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                An Identifier for the Service Concession Contract.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element ref="Name" minOccurs="1" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/title">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                The Name of the Service Concession Contract.
+                            </xs:documentation>
+                         </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:element name="ServiceConcessionContract" type="ServiceConcessionContractType"/>
+    <xs:element name="EstablishedUnder" type="LegalResourceType"/>
+    <xs:element name="HasContractingAuthority" type="PublicOrganizationCPSVAPType"/>
+    <xs:element name="HasEconomicOperator" type="cv:OrganizationType"/>
+    
+
+</xs:schema>

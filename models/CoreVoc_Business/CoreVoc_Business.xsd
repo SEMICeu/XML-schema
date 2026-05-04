@@ -42,6 +42,9 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
                 Financial and non-financial information as a result of an activity of an organisation.
             </xs:documentation>
         </xs:annotation>
+       	<xs:simpleContent>
+        	<xs:extension base="xs:anyURI"/>
+    	</xs:simpleContent>
     </xs:complexType>
     
 <!-- BusinessAgentType -->
@@ -88,10 +91,10 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
 
     
 <!-- FormalOrganizationType -->
+    
+    <xs:element name="FormalOrganizationBase" type="FormalOrganizationBaseType"/>    
 
-    <xs:element name="FormalOrganization" type="FormalOrganizationType"/>    
-
-    <xs:complexType name="FormalOrganizationType" sawsdl:modelReference="http://www.w3.org/ns/org#FormalOrganization">
+    <xs:complexType name="FormalOrganizationBaseType" sawsdl:modelReference="http://www.w3.org/ns/org#FormalOrganization">
         <xs:annotation>
             <xs:documentation xml:lang="en">
                 An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities
@@ -111,6 +114,25 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
    
    
 <!-- LegalEntityType -->
+    <xs:element name="LegalEntityBase" type="LegalEntityBaseType"/>   
+     
+    <xs:complexType name="LegalEntityBaseType" sawsdl:modelReference="http://www.w3.org/ns/legal#LegalEntity">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A self-employed person, company, or organization that has legal rights and obligations.
+            </xs:documentation>
+        </xs:annotation>
+    
+        <xs:complexContent>
+            <xs:extension base="FormalOrganizationBaseType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 
     <xs:element name="LegalEntity" type="LegalEntityType"/>    
    
@@ -122,7 +144,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
         </xs:annotation>
     
         <xs:complexContent>
-            <xs:extension base="FormalOrganizationType">
+            <xs:extension base="LegalEntityBaseType">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
                         An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities
@@ -137,7 +159,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
                             </xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element ref="ContactPoint" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/contactPoint">
+                    <xs:element ref="ContactPointBase" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/contactPoint">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">
                                 The main contact information of the resource.
@@ -213,13 +235,13 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
     </xs:complexType>  
 
     <xs:element name="HasAccountingDocument" type="AccountingDocumentType"/> 
-    <xs:element name="IdentifierLegalEntity" type="IdentifierLegalEntityType"/> 
-    <xs:element name="LegalIdentifierLegalEntity" type="IdentifierLegalEntityType"/> 
+    <xs:element name="IdentifierLegalEntity" type="IdentifierBaseType"/> 
+    <xs:element name="LegalIdentifierLegalEntity" type="IdentifierBaseType"/> 
     <xs:element name="LegalEntityActivity" type="CodeType"/> 
     <xs:element name="LegalEntityStatus" type="CodeType"/> 
     <xs:element name="LegalFormType" type="CodeType"/> 
     <xs:element name="LegalName" type="TextType"/> 
-    <xs:element name="RegisteredAddress" type="AddressType"/> 
+    <xs:element name="RegisteredAddress" type="AddressBaseType"/> 
     <xs:element name="RegistrationDate" type="xs:date"/>
 
     <xs:complexType name="IdentifierLegalEntityType" sawsdl:modelReference="http://www.w3.org/ns/adms#identifier">
@@ -249,7 +271,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
         </xs:complexContent>
     </xs:complexType>
 
-    <xs:element name="IdentifiesLegalEntity" type="IdentifierLegalEntityType"/> 
+    <xs:element name="IdentifiesLegalEntity" type="LegalEntityBaseType"/> 
 
 <!-- OrganizationType -->
 

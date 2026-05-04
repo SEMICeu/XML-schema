@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PublicOrganization
+    xmlns="http://data.europa.eu/m8g/xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xsi:schemaLocation="http://data.europa.eu/m8g/xsd ../CoreVoc_PublicOrganisation/CoreVoc_Public_Organization.xsd">
+
+    <AddressBase xsi:type="AddressType">
+        <AddressArea xml:lang="fr">Quartier Nord</AddressArea>
+        <AdminUnitL1 xml:lang="fr">Belgique</AdminUnitL1>
+        <AdminUnitL2 xml:lang="fr">Région de Bruxelles-Capitale</AdminUnitL2>
+        <FullAddress xml:lang="fr">Boulevard du Roi Albert II 33 1030 Bruxelles, Belgique</FullAddress>
+        <LocatorDesignatorAddress>33</LocatorDesignatorAddress>
+        <PostCode>1030</PostCode>
+        <PostName xml:lang="fr">Bruxelles</PostName>
+        <Thoroughfare xml:lang="fr">Boulevard du Roi Albert II</Thoroughfare>
+    </AddressBase>
+
+    <Classification>GOV</Classification>
+    <Classification>AGENCY</Classification>
+
+    <ContactPointBase xsi:type="ContactPointPOType">
+        <HasTelephone>+32 257 25757</HasTelephone>
+        <AvailabilityRestrictions xsi:type="TemporalEntityType">
+            <Description xml:lang="en">closed on weekend</Description>
+            <Frequency>WEEKLY</Frequency>
+        </AvailabilityRestrictions>
+
+        <OpeningHours xsi:type="TemporalEntityType">
+            <Description xml:lang="en">Every working day from 9 a.m. to 5 p.m.</Description>
+            <Frequency>DAILY</Frequency>
+        </OpeningHours>
+
+    </ContactPointBase>
+
+    <Homepage>https://finances.belgium.be/</Homepage>
+    <Homepage>https://financien.belgium.be/</Homepage>
+    <Homepage>https://finance.belgium.be/</Homepage>
+    <Homepage>https://finanzen.belgium.be/</Homepage>
+    
+    <PreferredLabel xml:lang="fr">Service Public Fédéral FINANCES</PreferredLabel>
+    <PreferredLabel xml:lang="nl">Federale Overheidsdienst FINANCIEN</PreferredLabel>
+    <PreferredLabel xml:lang="en">Federal Public Service FINANCE</PreferredLabel>
+    <PreferredLabel xml:lang="de">Foderaler Offentlicher Dienst FINANZEN</PreferredLabel>
+
+    <Spatial xsi:type="LocationType">
+        <GeographicIdentifier>http://publications.europa.eu/resource/authority/atu/BEL</GeographicIdentifier>
+    </Spatial>
+
+</PublicOrganization>

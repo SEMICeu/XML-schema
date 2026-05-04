@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+                                            
+targetNamespace="http://purl.org/vocab/cpsv/xsd"
+xmlns="http://purl.org/vocab/cpsv/xsd"
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:cv="http://data.europa.eu/m8g/xsd"
+
+xmlns:dct="http://purl.org/dc/terms/"   
+xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
+elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.2.0">
+
+    <xs:import namespace="http://data.europa.eu/m8g/xsd" 
+               schemaLocation="../CoreVoc_Aggregat/CoreVoc_Aggregat.xsd" /> 
+                
+  
+<!-- ===== Meta Data==== ================================= -->
+    <xs:annotation>
+        <xs:documentation>Core Public Service Vocabulary Application Profile(CPSV-AP)</xs:documentation>
+        <xs:appinfo>
+            <dct:title>Core Public Service Vocabulary Application Profile(CPSV-AP)</dct:title>
+            <dct:description>CPSV-AP provides a minimal common basis within Europe to describe public services.</dct:description>
+            <dct:creator>Emidio Stani (emidio.stani@pwc.com)</dct:creator>
+            <dct:creator>Wolfgang Keber (Wolfgang.Keber@dialogika.de)</dct:creator>
+            <dct:contributor>Pavlina Fragkou (European Commission)</dct:contributor>
+            <dct:contributor>Anastasia Sofou (Trasys International)</dct:contributor>
+            <dct:contributor>Kristina Hector (DIaLOGIKa GmbH)</dct:contributor>
+            <dct:contributor>Patrick Plewka (DIaLOGIKa GmbH)</dct:contributor>
+            <dct:licence>Licensed under the CC BY 4.0</dct:licence>
+            <dct:rightsHolder>European Union</dct:rightsHolder>
+            <dct:copyright>Copyright (C) European Union, 2025</dct:copyright>
+            <dct:status>In progress</dct:status>
+            <dct:created>2025-06-02</dct:created>
+        </xs:appinfo>
+    </xs:annotation>
+    
+   
+<!--  AgentType  -->
+
+   <xs:complexType name="AgentCPSVType" sawsdl:modelReference="http://xmlns.com/foaf/0.1/Agent">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Entity that is able to carry out action.
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:complexContent>
+            <xs:extension base="cv:AgentBaseType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Information (e.g. e-mail address, telephone number) of a person or department through which the user can get in touch with.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:sequence>
+                    <xs:element ref="HasRole" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#hasRole">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This very general property links an Agent to a Public Service in which it plays some role. Both 'provides' and 'uses' 
+                                are sub properties of playsRole with specific semantics.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element ref="Provides" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#provides">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                The provides property links an Agent to a Public Service for which it is responsible. 
+                                Whether it provides the service directly or outsources it is not relevant, 
+                                the Agent that provides the service is the one that is ultimately responsible for its provision.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                    <xs:element ref="Uses" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#uses">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+	                            The uses property links an Agent to a Public Service in which it plays the specific role of user, 
+	                            meaning that it provides the input and receives the output but does not play any direct role in providing the service. 
+	                            This will typically be an individual citizen or an outside organisation.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+<!-- FormalFramework -->
+
+    <xs:complexType name="FormalFrameworkBaseType" sawsdl:modelReference="http://purl.org/vocab/cpsv#FormalFramework">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This class represents the legislation, policy or policies that lie behind the rules that govern the service. 
+                As with the Rule class, the Formal Framework class is a sub class of frbr:Expression, i.e. instances of the class 
+                are concrete expressions of the more abstract concept of the piece of legislation or policy itself.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+        
+<!-- Input -->
+
+    <xs:complexType name="InputBaseType" sawsdl:modelReference="http://purl.org/vocab/cpsv#Input">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                The hasInput property links a Public Service to one or more instances of the Input class (see below). 
+                A specific service may require the presence of certain inputs or combinations of inputs in order to operate. 
+                These should be described in an application profile for a given service.
+                </xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+        
+<!-- Output -->
+
+    <xs:complexType name="OutputBaseType" sawsdl:modelReference="http://purl.org/vocab/cpsv#Output">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Outputs can by any resource - document, artefact - anything. In a specific context it is likely to be useful 
+                to either define a sub class or declare the particular resource to also be of another type as well. 
+                A general case might be a foaf:Document but where possible, it is better to refer to a controlled vocabulary of types. 
+                dcterms:type should be used to use to provide this information linking to a SKOS Concept.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+        
+   <xs:element name="OutputBase" type="OutputBaseType" />
+   
+<!-- PublicServiceType -->
+    <xs:complexType name="PublicServiceBaseType" sawsdl:modelReference="http://purl.org/vocab/cpsv#PublicService">
+            <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A Public Service is a mandatory or discretionary set of activities performed, or able to be performed,
+                by or on behalf of a public organisation, publicly funded and arise from public policy.
+            </xs:documentation>
+         </xs:annotation>
+    </xs:complexType>
+    
+    <xs:complexType name="PublicServiceType" sawsdl:modelReference="http://purl.org/vocab/cpsv#PublicService">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                A Public Service is a mandatory or discretionary set of activities performed, or able to be performed,
+                by or on behalf of a public organisation, publicly funded and arise from public policy.
+            </xs:documentation>
+         </xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="PublicServiceBaseType">
+				<xs:sequence>
+		            <xs:element ref="Follows" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#Follows">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        The Rule class represents a document that sets out the specific rules, guidelines or procedures 
+		                        that the Public Service follows.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		            <xs:element ref="HasInput" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#hasInput">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        The hasInput property links a Public Service to one or more instances of the Input class (see below). 
+		                        A specific service may require the presence of certain inputs or combinations of inputs in order to operate. 
+		                        These should be described in an application profile for a given service.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		            <xs:element ref="cv:Spatial" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#physicallyAvailableAt">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        A physical location at which a user may interact with the Public Service.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		            <xs:element ref="Produces" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#produces">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        The produces property links a Public Service to one or more instances of the Output class which is its range.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		        </xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+   </xs:complexType>
+
+    <!-- RuleType -->
+    <xs:complexType name="RuleBaseType" sawsdl:modelReference="http://purl.org/vocab/cpsv#Rule">
+    <xs:annotation>
+            <xs:documentation xml:lang="en">
+                The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows.
+            </xs:documentation>
+        </xs:annotation>
+    </xs:complexType>
+    
+    <xs:complexType name="RuleType" sawsdl:modelReference="http://purl.org/vocab/cpsv#Rule">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+        	<xs:extension base="RuleBaseType">
+        		<xs:sequence>
+                    <xs:element ref="Implements" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#implements">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                The implements property links a Rule to relevant legislation or policy documents i.e. the formal framework under which the Rules are defined.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+        	</xs:extension>
+        </xs:complexContent>
+     </xs:complexType>
+
+	<xs:element name="RuleBase" type="RuleBaseType" />
+	<xs:element name="Rule" type="RuleType" />
+    <!--  The elements -->
+
+    <xs:element name="HasRole" type="PublicServiceBaseType"/>
+    <xs:element name="Provides" type="PublicServiceBaseType"/>
+    <xs:element name="Uses" type="PublicServiceBaseType"/>
+    <xs:element name="HasInput" type="InputBaseType"/>
+    <xs:element name="Produces" type="OutputBaseType"/>
+    <xs:element name="Follows" type="RuleBaseType"/>
+	<xs:element name="Implements" type="FormalFrameworkBaseType"/>
+
+</xs:schema>    
+    

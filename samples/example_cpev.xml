@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PublicEvent
+    xmlns="http://data.europa.eu/m8g/xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://data.europa.eu/m8g/xsd ../CoreVoc_Public_Event/CoreVoc_Public_Event.xsd">
+
+    <Address xsi:type="AddressType">
+        <AdminUnitL1 xml:lang="fr">Belgique</AdminUnitL1>
+        <AdminUnitL2 xml:lang="fr">Région de Bruxelles-Capitale</AdminUnitL2>
+        <FullAddress xml:lang="fr">Rue de la Régence 3, 1000 Bruxelles, Belgique</FullAddress>
+        <LocatorDesignatorAddress>3</LocatorDesignatorAddress>
+        <PostCode>1000</PostCode>
+        <PostName xml:lang="fr">Bruxelles</PostName>
+        <Thoroughfare xml:lang="fr">Rue de la Régence</Thoroughfare>
+    </Address>
+
+    <ContactPointBase xsi:type="ContactPointType">
+        <HasEmail>info@fine-arts-museum.be</HasEmail>
+        <HasTelephone>+32 0(2) 508 32 11</HasTelephone>
+    </ContactPointBase>
+
+    <Description xml:lang="fr">
+        Les Musées royaux des Beaux-Arts de Belgique consacrent une exposition
+        exceptionnelle à Salvador Dalí et René Magritte.
+    </Description>
+
+    <EventStatus>NORMAL</EventStatus>
+    <EventType>EXHIBITION</EventType>
+
+    <HasParticipation xsi:type="ParticipationType">
+        <HasParticipant>
+            <AgentName xml:lang="fr">Fabrice Lavollay</AgentName>
+        </HasParticipant>
+        <HasParticipant>
+            <AgentName xml:lang="nl">Piotr W. Osburne</AgentName>
+        </HasParticipant>
+        <HasParticipant>
+            <AgentName xml:lang="nl">David Peeters</AgentName>
+        </HasParticipant>
+        <Role>illustrator</Role>
+    </HasParticipation>
+    
+    <HasTime>
+        <Description xml:lang="en">From 11.10.2019 to 16.02.2020</Description>
+    </HasTime>
+    
+    <Homepage>https://fine-arts-museum.be/fr/expositions/dali-magritte</Homepage>
+    <Title xml:lang="fr">Dalí &amp; Magritte - Deux icônes du surréalisme en dialogue</Title>
+
+</PublicEvent>

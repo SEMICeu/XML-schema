@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CriterionBase
+    xmlns="http://data.europa.eu/m8g/xsd"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xsi:type="CriterionExtensionType"
+    xsi:schemaLocation="http://data.europa.eu/m8g/xsd example_integrated.xsd">
+
+    <Description xml:lang="en">Entitlement to marry.</Description>
+
+    <!-- cv:hasRequirement → ex:informationRequirement ───────────────────── -->
+    <HasRequirement xsi:type="InformationRequirementExtensionType">
+
+        <Description xml:lang="en">The age of the applicant.</Description>
+        <HasConcept xsi:type="InformationConceptType">
+            <Name xml:lang="en">age</Name>
+        </HasConcept>
+        <HasEvidenceTypeList xsi:type="EvidenceTypeListType">
+            <SpecifiesEvidenceType xsi:type="EvidenceTypeType">
+                <EvidenceTypeClassification>BirthCertificate</EvidenceTypeClassification>
+            </SpecifiesEvidenceType>
+        </HasEvidenceTypeList>
+        <HasEvidenceTypeList xsi:type="EvidenceTypeListType">
+            <SpecifiesEvidenceType xsi:type="EvidenceTypeType">
+                <EvidenceTypeClassification>IDcard</EvidenceTypeClassification>
+            </SpecifiesEvidenceType>
+        </HasEvidenceTypeList>
+        
+        <HasRequirement xsi:type="ConstraintExtensionType">
+            <Constrains xsi:type="InformationConceptType">
+                <Name xml:lang="en">age</Name>
+            </Constrains>
+            <Description xml:lang="en">The applicant must be at least 18 years of age.</Description>
+            <IsDerivedFrom xsi:type="ReferenceFrameworkType">
+                <IdentifierLiteral>Art.144</IdentifierLiteral>
+            </IsDerivedFrom>
+            <IsIssuedBy xsi:type="PublicOrganizationType">
+                <PreferredLabel xml:lang="en">Federal Public Service Justice</PreferredLabel>
+            </IsIssuedBy>
+        </HasRequirement>
+
+        <HasSupportingEvidence xsi:type="EvidenceExtensionType">
+            <dct:identifier>592-1983273-93</dct:identifier>
+            <dct:issued>2018-09-07</dct:issued>
+            <dct:title xml:lang="en">ID card of John Doe</dct:title>
+            <dct:type>idcard</dct:type>
+            <IsAbout xsi:type="PersonType">
+                <FamilyName xml:lang="en">Doe</FamilyName>
+                <GivenName xml:lang="en">John</GivenName>
+            </IsAbout>
+            <IsConformantTo xsi:type="EvidenceTypeType">
+                <EvidenceTypeClassification>IDcard</EvidenceTypeClassification>
+            </IsConformantTo>
+            <SupportsValue xsi:type="SupportedValueType">
+                <ProvidesValueFor xsi:type="InformationConceptType">
+                    <Name xml:lang="en">age</Name>
+                </ProvidesValueFor>
+                <Value>25</Value>
+            </SupportsValue>
+        </HasSupportingEvidence>
+
+        <IsDerivedFrom xsi:type="ReferenceFrameworkType">
+            <IdentifierLiteral>Art.144</IdentifierLiteral>
+        </IsDerivedFrom>
+
+        <IsIssuedBy xsi:type="PublicOrganizationType">
+            <PreferredLabel xml:lang="en">Federal Public Service Justice</PreferredLabel>
+        </IsIssuedBy>
+
+    </HasRequirement>
+
+    <IsDerivedFrom xsi:type="ReferenceFrameworkType">
+        <IdentifierLiteral>Art.144</IdentifierLiteral>
+    </IsDerivedFrom>
+
+    <IsIssuedBy xsi:type="PublicOrganizationType">
+        <PreferredLabel xml:lang="en">Federal Public Service Justice</PreferredLabel>
+    </IsIssuedBy>
+
+</CriterionBase>

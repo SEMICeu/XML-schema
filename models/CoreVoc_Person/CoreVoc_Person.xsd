@@ -7,7 +7,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:dct="http://purl.org/dc/terms/"
     xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
-    elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.1">    
+    elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.1">
 
 <!-- ===== Includes/Imports ============================== -->
     <xs:include schemaLocation="../CoreVoc_Common/CoreVoc_CommonTypes.xsd"/>
@@ -37,7 +37,17 @@
   
 <!-- JurisdictionType -->
 
+    <xs:element name="JurisdictionBase" type="JurisdictionBaseType"/>
+
     <xs:element name="Jurisdiction" type="JurisdictionType"/>
+
+	<xs:complexType name="JurisdictionBaseType" sawsdl:modelReference="http://purl.org/dc/terms/Jurisdiction">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				The limits or territory within which authority may be exercised.
+			</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
 
     <xs:complexType name="JurisdictionType" sawsdl:modelReference="http://purl.org/dc/terms/Jurisdiction">
         <xs:annotation>
@@ -45,23 +55,26 @@
                 The limits or territory within which authority may be exercised.
             </xs:documentation>
         </xs:annotation>
-    
-        <xs:sequence>
-            <xs:element ref="Id" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
-                <xs:annotation>
-                    <xs:documentation xml:lang="en">
-                        A reference in the form of a Uniform Resource Identifier to the Jurisdiction.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
-            <xs:element ref="JurisdictionName" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#label">
-                <xs:annotation>
-                    <xs:documentation xml:lang="en">
-                        A string of characters that represents a Jurisdiction.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
-        </xs:sequence>
+		<xs:complexContent>
+            <xs:extension base="JurisdictionBaseType">
+				<xs:sequence>
+					<xs:element ref="Id" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/identifier">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+								A reference in the form of a Uniform Resource Identifier to the Jurisdiction.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="JurisdictionName" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/2000/01/rdf-schema#label">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+								A string of characters that represents a Jurisdiction.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
     </xs:complexType>
 
     <xs:element name="Id" type="xs:anyURI"/>
@@ -70,7 +83,7 @@
     
 <!-- PersonType -->
     
-	<xs:element name="Person" type="PersonType"/>
+	<xs:element name="FoafPerson" type="FoafPersonType"/>
  
     <xs:complexType name="FoafPersonType" sawsdl:modelReference="http://xmlns.com/foaf/0.1/Person">
         <xs:annotation>
@@ -79,18 +92,33 @@
             </xs:documentation>
         </xs:annotation>
         <xs:complexContent>
-            <xs:extension base="AgentType"/>
-        </xs:complexContent>   
+            <xs:extension base="AgentBaseType"/>
+        </xs:complexContent>
     </xs:complexType>
-    
+
+	<xs:element name="PersonBase" type="PersonBaseType"/>
+ 
+	<xs:complexType name="PersonBaseType" sawsdl:modelReference="http://www.w3.org/ns/person#Person">
+	    <xs:annotation>
+	        <xs:documentation xml:lang="en">
+	            A individual human being who may be dead or alive, but not imaginary.
+	        </xs:documentation>
+	    </xs:annotation>
+		<xs:complexContent>
+            <xs:extension base="FoafPersonType"/>
+        </xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="Person" type="PersonType"/>
+
 	<xs:complexType name="PersonType" sawsdl:modelReference="http://www.w3.org/ns/person#Person">
 	    <xs:annotation>
 	        <xs:documentation xml:lang="en">
 	            A individual human being who may be dead or alive, but not imaginary.
 	        </xs:documentation>
-	    </xs:annotation> 
+	    </xs:annotation>
         <xs:complexContent>
-            <xs:extension base="FoafPersonType">
+            <xs:extension base="PersonBaseType">
                 <xs:sequence>
                     <xs:element ref="AlternativeName" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/alternative">
                         <xs:annotation>
@@ -238,24 +266,22 @@
 	</xs:complexType>
 
     <xs:element name="BirthName" type="TextType"/> 
-    <xs:element name="Citizenship" type="JurisdictionType"/> 
-    <xs:element name="CountryOfBirth" type="LocationType"/> 
-    <xs:element name="CountryOfDeath" type="LocationType"/> 
+    <xs:element name="Citizenship" type="JurisdictionBaseType"/> 
+    <xs:element name="CountryOfBirth" type="LocationBaseType"/> 
+    <xs:element name="CountryOfDeath" type="LocationBaseType"/> 
     <xs:element name="DateOfBirth" type="GenericDateType"/> 
     <xs:element name="DateOfDeath" type="GenericDateType"/> 
-    <xs:element name="Domicile" type="AddressType"/> 
+    <xs:element name="Domicile" type="AddressBaseType"/> 
     <xs:element name="FamilyName" type="TextType"/> 
     <xs:element name="FullName" type="TextType"/> 
     <xs:element name="Gender" type="CodeType"/> 
     <xs:element name="GivenName" type="TextType"/>
-    <xs:element name="IdentifierPerson" type="IdentifierType"/>
+    <xs:element name="IdentifierPerson" type="IdentifierBaseType"/>
     <xs:element name="MatronymicName" type="TextType"/>
     <xs:element name="PatronymicName" type="TextType"/>
-    <xs:element name="PlaceOfBirth" type="LocationType"/>
-    <xs:element name="PlaceOfDeath" type="LocationType"/>
+    <xs:element name="PlaceOfBirth" type="LocationBaseType"/>
+    <xs:element name="PlaceOfDeath" type="LocationBaseType"/>
     <xs:element name="Residency" type="JurisdictionType"/>
     <xs:element name="Sex" type="CodeType"/>
 
-
-    
 </xs:schema>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+<xs:schema targetNamespace="http://purl.org/dc/terms/"
+           xmlns="http://purl.org/dc/terms/"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:dc="http://purl.org/dc/elements/1.1/"
            xmlns:dcmitype="http://purl.org/dc/dcmitype/"
-           targetNamespace="http://purl.org/dc/terms/"
-           xmlns="http://purl.org/dc/terms/"
+           xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
            elementFormDefault="qualified"
            attributeFormDefault="unqualified">
 
@@ -60,10 +61,12 @@
     </xs:documentation>
 
   </xs:annotation>
-<!--
+
+  <!--
   <xs:import namespace="http://www.w3.org/XML/1998/namespace"
              schemaLocation="http://www.w3.org/2001/03/xml.xsd" />
  --> 
+  
    <xs:import namespace="http://purl.org/dc/elements/1.1/"
               schemaLocation="dc.xsd"/>
 
@@ -135,7 +138,8 @@
    <xs:element name="license" substitutionGroup="rights"/>
 
    <xs:element name="bibliographicCitation" substitutionGroup="identifier"/>
-   <xs:complexType name="LCSH">
+<!-- 
+  <xs:complexType name="LCSH">
    <xs:simpleContent>
     <xs:restriction base="dc:SimpleLiteral">
         <xs:simpleType>
@@ -374,5 +378,7 @@
       <xs:group ref="elementsAndRefinementsGroup"/>
     </xs:choice>
   </xs:complexType>
+
+  -->
 
 </xs:schema>

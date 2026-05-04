@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<AP:PublicServiceCPSVAP  xmlns="https://semiceu.github.io/CPSV-AP/xsd"
+               	xmlns:AP="https://semiceu.github.io/CPSV-AP/xsd"
+               	xmlns:cv="http://data.europa.eu/m8g/xsd"
+               	xmlns:xml="http://www.w3.org/XML/1998/namespace" 
+               	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               	xsi:schemaLocation="https://semiceu.github.io/CPSV-AP/xsd CoreVoc_CPSV-AP.xsd" >
+
+    <AP:ContactPoint>
+        <cv:HasTelephone>+32 257 25757</cv:HasTelephone>
+        <AP:AvailabilityRestriction>
+        	<cv:Description>closed on weekend</cv:Description>
+        	<cv:Frequency>WEEKLY</cv:Frequency>
+        </AP:AvailabilityRestriction>
+        <AP:OpeningHours>
+        	<cv:Description>Every day from 9 a.m. to 5 p.m.</cv:Description>
+        	<cv:Frequency>DAILY</cv:Frequency>
+        </AP:OpeningHours>
+    </AP:ContactPoint>
+
+    <cv:Description xml:lang="FR">Service pour la déclaration à l'impôt des personnes physiques en ligne</cv:Description>
+
+    <AP:HasChannel>
+        <cv:IdentifierLiteral>cha-123</cv:IdentifierLiteral>
+        <AP:OpeningHours>
+            <cv:Description xml:lang="EN">Every day from 9 a.m. to 5 p.m.</cv:Description>
+            <cv:Frequency>http://publications.europa.eu/resource/authority/frequency/DAILY</cv:Frequency>
+        </AP:OpeningHours>
+        <cv:Type>http://data.europa.eu/snb/com-channel/b37115f83e</cv:Type>
+    </AP:HasChannel>
+
+    <AP:HasCompetentAuthority>
+        <cv:PreferredLabel xml:lang="FR">Service Public Fédéral FINANCES</cv:PreferredLabel>
+        <cv:PreferredLabel xml:lang="NL">Federale Overheidsdiesnt FINANCIEN</cv:PreferredLabel>
+        <cv:PreferredLabel xml:lang="EN">Federal Public Service FINANCE</cv:PreferredLabel>
+        <cv:PreferredLabel xml:lang="DE">Föderaler Öffentlicher Dienst FINANZEN</cv:PreferredLabel>
+        <cv:Spatial xsi:type="cv:LocationType">
+        	<cv:GeographicName>Belgium</cv:GeographicName>
+        </cv:Spatial>
+    </AP:HasCompetentAuthority>
+
+	
+    <AP:HasInputType>
+        <cv:EvidenceTypeClassification>certificate</cv:EvidenceTypeClassification>
+        <cv:IdentifierLiteral>evt-123</cv:IdentifierLiteral>
+    </AP:HasInputType>
+
+    <AP:HasParticipation>
+    	<cv:Description></cv:Description>
+    	<AP:HasParticipant>
+    		<cv:Address>
+ 				<cv:AddressArea>
+ 				</cv:AddressArea>
+    		</cv:Address>
+    		<cv:AgentName>
+    		</cv:AgentName>
+    		<cv:IdentifierLiteral>
+    		</cv:IdentifierLiteral>
+    	</AP:HasParticipant>
+    	<cv:IdentifierLiteral></cv:IdentifierLiteral>
+    	<cv:Role></cv:Role>
+    </AP:HasParticipation>
+    
+    <AP:HoldsRequirement>
+        <AP:HasSupportingEvidence>
+            <cv:Description xml:lang="FR">Attestation en matière de frais de garde d'enfants de l'année 2020</cv:Description>
+            <cv:IdentifierLiteral>evi-123</cv:IdentifierLiteral>
+            <AP:IsConformantTo>
+                <cv:EvidenceTypeClassification>certificate</cv:EvidenceTypeClassification>
+                <cv:IdentifierLiteral>evt-123</cv:IdentifierLiteral>
+            </AP:IsConformantTo>
+            <cv:Name xml:lang="FR">Attestation garde d'enfants</cv:Name>
+        </AP:HasSupportingEvidence>    
+        <cv:IdentifierLiteral>req-123</cv:IdentifierLiteral>
+        <cv:Name xml:lang="EN">Request to provide certificate about childcare costs</cv:Name>
+        <cv:Type>federalreduction</cv:Type>
+    </AP:HoldsRequirement>
+
+    <cv:IdentifierLiteral>Tax-on-web</cv:IdentifierLiteral>
+
+    <AP:Name xml:lang="EN">Tax-on-web</AP:Name>
+    
+
+</AP:PublicServiceCPSVAP>

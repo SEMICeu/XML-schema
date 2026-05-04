@@ -5,8 +5,8 @@
     
 	
 	<path id="saxon">
-	    <fileset dir="./rules/lib/SaxonHE12-5J">
-	        <include name="saxon-he-12.5.jar" />
+	    <fileset dir="./rules/lib/SaxonHE12-9J">
+	        <include name="saxon-he-12.9.jar" />
 	    </fileset>
 	</path>
 	<target name="validate">

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Person
+    xmlns="http://data.europa.eu/m8g/xsd"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace"
+    xsi:schemaLocation="http://data.europa.eu/m8g/xsd ../CoreVoc_Person/CoreVoc_Person.xsd">
+
+    <BirthName xml:lang="fr">René François Ghislain Magritte</BirthName>
+    <DateOfBirth>1898-11-21</DateOfBirth>
+    <DateOfDeath>1967-08-15</DateOfDeath>
+
+    <Domicile xsi:type="AddressType">
+		<AdminUnitL1 xml:lang="fr">Belgique</AdminUnitL1>
+        <AdminUnitL2 xml:lang="fr">Région de Bruxelles-Capitale</AdminUnitL2>
+        <FullAddress xml:lang="fr">Rue Esseghem 135, 1090 Bruxelles, Belgique</FullAddress>
+        <LocatorDesignatorAddress>135</LocatorDesignatorAddress>
+        <PostCode>1090</PostCode>
+        <PostName xml:lang="fr">Bruxelles</PostName>
+        <Thoroughfare xml:lang="fr">Rue Esseghem</Thoroughfare>
+    </Domicile>
+               
+    <FamilyName xml:lang="fr">Magritte</FamilyName>
+    <FullName xml:lang="fr">René François Ghislain Magritte</FullName>
+    <GivenName xml:lang="fr">René François Ghislain</GivenName>
+    
+    <PlaceOfBirth xsi:type="LocationType">
+        <GeographicIdentifier>https://www.geonames.org/2792567</GeographicIdentifier>
+        <GeographicName xml:lang="fr">Lessines</GeographicName>
+    </PlaceOfBirth>
+
+    <PlaceOfDeath xsi:type="LocationType">
+        <GeographicIdentifier>https://www.geonames.org/2800866</GeographicIdentifier>
+        <GeographicName xml:lang="fr">Bruxelles</GeographicName>
+    </PlaceOfDeath>
+
+    <Sex>MALE</Sex>
+</Person>

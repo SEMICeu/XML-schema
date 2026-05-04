@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema
+    targetNamespace="http://data.europa.eu/m8g/xsd"
+    xmlns="http://data.europa.eu/m8g/xsd"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:sawsdl="http://www.w3.org/ns/sawsdl"
+    elementFormDefault="qualified"
+    attributeFormDefault="unqualified"
+    version="1.0.0">
+
+    <xs:annotation>
+    	<xs:documentation>Integrated Core Vocabularies for example_criterion.xml</xs:documentation>
+        <xs:appinfo>
+            <dct:title>Integrated Core Vocabularies – CCCEV + Person + Public Organization</dct:title>
+            <dct:description>
+                Wrapper schema combining CCCEV, Core Person and Core Public Organization
+                under http://data.europa.eu/m8g/xsd, with AP extension types and
+                Dublin Core Terms import for Evidence metadata properties.
+            </dct:description>
+            <dct:license>Licensed under the CC BY 4.0</dct:license>
+            <dct:rightsHolder>European Union</dct:rightsHolder>
+        </xs:appinfo>
+    </xs:annotation>
+
+    <xs:include schemaLocation="../CoreVoc_CCCEV/CoreVoc_CCCEV.xsd"/>
+    <xs:include schemaLocation="../CoreVoc_Person/CoreVoc_Person.xsd"/>
+    <xs:include schemaLocation="../CoreVoc_PublicOrganisation/CoreVoc_Public_Organization.xsd"/>
+
+    <xs:import
+        namespace="http://purl.org/dc/terms/"
+        schemaLocation="../CoreVoc_Aggregat/dcterms.xsd"/>
+
+    <xs:complexType name="CriterionExtensionType"
+        sawsdl:modelReference="http://data.europa.eu/m8g/Criterion">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                AP extension of CriterionBaseType.
+                Adds the Requirement properties relevant to this AP.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="CriterionBaseType">
+                <xs:sequence>
+                    <xs:element ref="Description"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/description"/>
+                    <xs:element ref="HasRequirement"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/hasRequirement"/>
+                    <xs:element ref="HasSupportingEvidence"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/hasSupportingEvidence"/>
+                    <xs:element ref="IsDerivedFrom"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/isDerivedFrom"/>
+                    <xs:element ref="IsIssuedBy"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/publisher"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="InformationRequirementExtensionType"
+        sawsdl:modelReference="http://data.europa.eu/m8g/InformationRequirement">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                AP extension of InformationRequirementBaseType.
+                Adds the Requirement properties relevant to this AP.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="InformationRequirementBaseType">
+                <xs:sequence>
+                    <xs:element ref="Description"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/description"/>
+                    <xs:element ref="HasConcept"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/hasConcept"/>
+                    <xs:element ref="HasEvidenceTypeList"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/hasEvidenceTypeList"/>
+                    <xs:element ref="HasRequirement"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/hasRequirement"/>
+                    <xs:element ref="HasSupportingEvidence"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/hasSupportingEvidence"/>
+                    <xs:element ref="IsDerivedFrom"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/isDerivedFrom"/>
+                    <xs:element ref="IsIssuedBy"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/publisher"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ConstraintExtensionType"
+        sawsdl:modelReference="http://data.europa.eu/m8g/Constraint">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                AP extension of ConstraintBaseType.
+                Re-declares Constrains and adds the Requirement properties
+                relevant to this AP.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ConstraintBaseType">
+                <xs:sequence>
+                    <xs:element ref="Constrains"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/constrains"/>
+                    <xs:element ref="Description"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/description"/>
+                    <xs:element ref="IsDerivedFrom"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/isDerivedFrom"/>
+                    <xs:element ref="IsIssuedBy"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/publisher"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="EvidenceExtensionType"
+        sawsdl:modelReference="http://data.europa.eu/m8g/Evidence">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                AP extension of EvidenceBaseType.
+                Adds all EvidenceType properties plus DC Terms metadata
+                properties (dct:title, dct:identifier, dct:issued, dct:type)
+                that are present in the source RDF but absent from EvidenceType.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="EvidenceBaseType">
+                <xs:sequence>
+                    <xs:element ref="dct:identifier"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/identifier"/>
+                    <xs:element ref="dct:issued"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/issued"/>
+                    <xs:element ref="dct:title"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/title"/>
+                    <xs:element ref="dct:type"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/type"/>
+                    <!-- EvidenceType properties                             -->
+                    <xs:element ref="ConfidentialityLevelType"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/confidentialityLevelType"/>
+                    <xs:element ref="IsAbout"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/subject"/>
+                    <xs:element ref="IsConformantTo"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/conformsTo"/>
+                    <xs:element ref="IsCreatedBy"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/creator"/>
+                    <xs:element ref="IsIssuedBy"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://purl.org/dc/terms/publisher"/>
+                    <xs:element ref="IsProvidedBy"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/isProvidedBy"/>
+                    <xs:element ref="SupportsConcept"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/supportsConcept"/>
+                    <xs:element ref="SupportsRequirement"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/supportsRequirement"/>
+                    <xs:element ref="SupportsValue"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/supportsValue"/>
+                    <xs:element ref="ValidityPeriod"
+                        minOccurs="0" maxOccurs="unbounded"
+                        sawsdl:modelReference="http://data.europa.eu/m8g/validityPeriod"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+</xs:schema>

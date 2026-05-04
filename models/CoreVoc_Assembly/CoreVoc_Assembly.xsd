@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+
+targetNamespace="http://data.europa.eu/m8g/xsd" 
+xmlns="http://data.europa.eu/m8g/xsd" 
+xmlns:AP="https://semiceu.github.io/CPSV-AP/xsd"
+xmlns:cv="http://data.europa.eu/m8g/xsd" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:dct="http://purl.org/dc/terms/"
+elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.1">
+ 
+    <xs:include schemaLocation="../CoreVoc_Aggregat/CoreVoc_Aggregat.xsd" />
+
+    <xs:include schemaLocation="../CoreVoc_Common/CoreVoc_CommonTypes.xsd" />
+
+    <xs:include schemaLocation="../CoreVoc_PublicOrganisation/CoreVoc_Public_Organization.xsd" /> 
+
+    <xs:include schemaLocation="../CoreVoc_CCCEV/CoreVoc_CCCEV.xsd" /> 
+<!-- ===== Meta Data==== ================================= -->
+    <xs:annotation>
+        <xs:documentation>Core Public Service Vocabulary Application Profile(CPSV-AP)</xs:documentation>
+        <xs:appinfo>
+            <dct:title>Core Public Service Vocabulary Application Profile(CPSV-AP)</dct:title>
+            <dct:description>CPSV-AP provides a minimal common basis within Europe to describe public services.</dct:description>
+            <dct:creator>Emidio Stani (emidio.stani@pwc.com)</dct:creator>
+            <dct:creator>Wolfgang Keber (Wolfgang.Keber@dialogika.de)</dct:creator>
+            <dct:contributor>Pavlina Fragkou (European Commission)</dct:contributor>
+            <dct:contributor>Anastasia Sofou (Trasys International)</dct:contributor>
+            <dct:contributor>Kristina Hector (DIaLOGIKa GmbH)</dct:contributor>
+            <dct:contributor>Patrick Plewka (DIaLOGIKa GmbH)</dct:contributor>
+            <dct:licence>Licensed under the CC BY 4.0</dct:licence>
+            <dct:rightsHolder>European Union</dct:rightsHolder>
+            <dct:rights>Copyright (C) European Union, 2025</dct:rights>
+            <dct:status>In progress</dct:status>
+            <dct:created>2025-06-02</dct:created>
+        </xs:appinfo>
+    </xs:annotation>
+
+    
+</xs:schema>
