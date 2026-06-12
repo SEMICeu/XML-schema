@@ -11,8 +11,7 @@
     xmlns:xml="http://www.w3.org/XML/1998/namespace"
     elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
 
-    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-               schemaLocation="./xml.xsd"/>
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace"/>
 
     <!-- ===== Meta Data==== ================================= -->
     <xs:annotation>
