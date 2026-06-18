@@ -28,7 +28,7 @@
 
 <sch:pattern id="rule_9-12"><sch:title>Simple type has data definition</sch:title>
   <sch:rule context="xs:simpleType">
-    <sch:assert role="error" test="some $definition in xs:annotation/xs:documentation[1] satisfies                         string-length(normalize-space(string($definition))) &gt; 0">Rule 9-12: A simple type MUST have a data definition.</sch:assert>
+    <sch:assert role="error" test="some $definition in xs:annotation/xs:documentation[1] satisfies string-length(normalize-space(string($definition))) &gt; 0">Rule 9-12: A simple type MUST have a data definition.</sch:assert>
   </sch:rule>
 </sch:pattern>
 
@@ -72,7 +72,7 @@
 
 <sch:pattern id="rule_9-82"><sch:title>Schema has data definition</sch:title>
   <sch:rule context="xs:schema">
-    <sch:assert role="error" test="some $definition in (xs:annotation/xs:documentation)[1] satisfies                         string-length(normalize-space(string($definition))) &gt; 0">Rule 9-82: An element xs:schema MUST have a data definition.</sch:assert>
+    <sch:assert role="error" test="some $definition in (xs:annotation/xs:documentation)[1] satisfies string-length(normalize-space(string($definition))) &gt; 0">Rule 9-82: An element xs:schema MUST have a data definition.</sch:assert>
   </sch:rule>
 </sch:pattern>
 
@@ -90,11 +90,11 @@
           
 <sch:pattern id="rule_9-85"><sch:title>Schema has version</sch:title>
   <sch:rule context="xs:schema">
-    <sch:assert role="error" test="some $version in @version satisfies                       string-length(normalize-space(@version)) &gt; 0">Rule 9-85: An element xs:schema MUST have an attribute {}version that MUST NOT be empty.</sch:assert>
+    <sch:assert role="error" test="some $version in @version satisfies string-length(normalize-space(@version)) &gt; 0">Rule 9-85: An element xs:schema MUST have an attribute {}version that MUST NOT be empty.</sch:assert>
   </sch:rule>
 </sch:pattern>
 
-<sch:pattern id="rule_9-85"><sch:title>Schema version follows dot-notation</sch:title>
+<sch:pattern id="rule_9-85-2"><sch:title>Schema version follows dot-notation</sch:title>
   <sch:rule context="xs:schema[exists(@version)]">
     <sch:assert role="error" test="matches (@version, '^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-((?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*)(?:\.(?:0|[1-9]\d*|\d*[a-zA-Z-][0-9a-zA-Z-]*))*))?(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?$')" >Rule 9-85: An element xs:schema MUST have an attribute {}version that MUST follow the dot-notation.</sch:assert>
   </sch:rule>
@@ -141,8 +141,8 @@
 </sch:pattern>
 
 <sch:pattern id="rule_11-3"><sch:title>Warning for the use of anyType</sch:title>
-  <sch:rule id="rule_11-3" context="xs:element[exists(@type)]">
-    <sch:assert role="warning " test="not(resolve-QName(@type, .) = xs:QName('xs:anyType'))">An element should not have a type anyType, unless flexibility is needed.</sch:assert>
+  <sch:rule context="xs:element[exists(@type)]">
+    <sch:assert role="warning" test="not(resolve-QName(@type, .) = xs:QName('xs:anyType'))">An element should not have a type anyType, unless flexibility is needed.</sch:assert>
   </sch:rule>
 </sch:pattern>
 
