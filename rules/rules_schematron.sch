@@ -46,7 +46,7 @@
             
 <sch:pattern id="rule_9-26"><sch:title>Complex type has data definition</sch:title>
   <sch:rule context="xs:complexType">
-    <sch:assert role="error" test="some $definition in xs:annotation/xs:documentation[1] satisfies                         string-length(normalize-space(string($definition))) &gt; 0">Rule 9-26: A complex type MUST have a data definition.</sch:assert>
+    <sch:assert role="error" test="some $definition in xs:annotation/xs:documentation[1] satisfies string-length(normalize-space(string($definition))) &gt; 0">Rule 9-26: A complex type MUST have a data definition.</sch:assert>
   </sch:rule>
 </sch:pattern>
 
@@ -123,7 +123,7 @@
   <sch:rule context="xs:attribute">
     <sch:report test="false()" role="warning">Rule 10-50: This rule does not apply to an attribute.</sch:report>
   </sch:rule>
-  <sch:rule context="xs:complexType[some $name in @name,                                     $extension in xs:simpleContent/xs:extension,                                     $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]">
+  <sch:rule context="xs:complexType[some $name in @name, $extension in xs:simpleContent/xs:extension, $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]">
     <sch:report test="false()" role="warning">Rule 10-50: This rule does not apply to a proxy types.</sch:report>
   </sch:rule>
   <sch:rule context="xs:*[exists(@name)]">
@@ -132,7 +132,7 @@
 </sch:pattern>
 
 <sch:pattern id="rule_11-1"><sch:title>Name of type ends in "Type"</sch:title>
-  <sch:rule context="xs:complexType[some $name in @name,                                     $extension in xs:simpleContent/xs:extension,                                     $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]">
+  <sch:rule context="xs:complexType[some $name in @name, $extension in xs:simpleContent/xs:extension, $base-qname in resolve-QName($extension/@base, $extension) satisfies                                     $base-qname = QName('http://www.w3.org/2001/XMLSchema', $name)]">
     <sch:report test="false()" role="warning">Rule 11-1: The name of a proxy type does not end in "Type".</sch:report>
   </sch:rule>
   <sch:rule context="xs:*[(self::xs:simpleType or self::xs:complexType) and exists(@name)]">
