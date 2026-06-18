@@ -36,7 +36,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
     
     <xs:element name="AccountingDocument" type="AccountingDocumentType"/>    
     
-    <xs:complexType name="AccountingDocumentType" sawsdl:modelReference="data.europa.eu/m8g/AccountingDocument">
+    <xs:complexType name="AccountingDocumentType" sawsdl:modelReference="http://data.europa.eu/m8g/AccountingDocument">
         <xs:annotation>
             <xs:documentation xml:lang="en">
                 Financial and non-financial information as a result of an activity of an organisation.
