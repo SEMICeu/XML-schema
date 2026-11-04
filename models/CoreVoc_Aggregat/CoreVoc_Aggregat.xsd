@@ -17,7 +17,7 @@
 
     <!-- ===== Meta Data==== ================================= -->
     <xs:annotation>
-        <xs:documentation>Core Aggregated Components</xs:documentation>
+        <xs:documentation xml:lang="en">Core Aggregated Components</xs:documentation>
         <xs:appinfo>
             <dct:title>Core Aggregated Components</dct:title>
             <dct:description>This XML schema describes the Core Aggregated Components as part of SEMIC Core Vocabularies .</dct:description>
@@ -105,17 +105,17 @@
 						</xs:documentation>
 					</xs:annotation>
 				</xs:element>
-				<xs:element ref="PostOfficeBox" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/locn#poBox">
-					<xs:annotation>
-						<xs:documentation xml:lang="en">
-							A location designator for a postal delivery point at a post office, usually a number.
-						</xs:documentation>
-					</xs:annotation>
-				</xs:element>
 				<xs:element ref="PostCode" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/locn#postCode">
 					<xs:annotation>
 						<xs:documentation xml:lang="en">
 							The code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.
+						</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="PostOfficeBox" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/locn#poBox">
+					<xs:annotation>
+						<xs:documentation xml:lang="en">
+							A location designator for a postal delivery point at a post office, usually a number.
 						</xs:documentation>
 					</xs:annotation>
 				</xs:element>
