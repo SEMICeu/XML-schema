@@ -235,7 +235,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
     </xs:complexType>  
 
     <xs:element name="HasAccountingDocument" type="AccountingDocumentType"/> 
-    <xs:element name="IdentifierLegalEntity" type="IdentifierBaseType"/> 
+    <xs:element name="IdentifierLegalEntityBase" type="IdentifierBaseType"/> 
     <xs:element name="LegalIdentifierLegalEntity" type="IdentifierBaseType"/> 
     <xs:element name="LegalEntityActivity" type="CodeType"/> 
     <xs:element name="LegalEntityStatus" type="CodeType"/> 
@@ -244,6 +244,8 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
     <xs:element name="RegisteredAddress" type="AddressBaseType"/> 
     <xs:element name="RegistrationDate" type="xs:date"/>
 
+	<xs:element name="IdentifierLegalEntity" type="IdentifierLegalEntityType"/>
+	
     <xs:complexType name="IdentifierLegalEntityType" sawsdl:modelReference="http://www.w3.org/ns/adms#identifier">
         <xs:annotation>
             <xs:documentation xml:lang="en">
@@ -275,9 +277,9 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
 
 <!-- OrganizationType -->
 
-    <xs:element name="Organization" type="OrganizationType"/> 
+    <xs:element name="BusinessOrganization" type="BusinessOrganizationType"/> 
     
-    <xs:complexType name="OrganizationType" sawsdl:modelReference="http://www.w3.org/ns/org#Organization">
+    <xs:complexType name="BusinessOrganizationType" sawsdl:modelReference="http://www.w3.org/ns/org#Organization">
         <xs:annotation>
             <xs:documentation xml:lang="en">
                 A collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.
@@ -322,9 +324,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
     </xs:complexType>  
 
     <xs:element name="HasMember" type="BusinessAgentType"/> 
-    <xs:element name="HasSubOrganization" type="OrganizationType"/> 
-    <xs:element name="SubOrganizationOf" type="OrganizationType"/> 
-
+ 
 
 </xs:schema>   
     

@@ -148,56 +148,6 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.1
     <xs:element name="OpeningHours" type="TemporalEntityBaseType" />
    
     
-<!-- OrganizationType -->    
-    <xs:element name="OrganizationBase" type="OrganizationBaseType"/> 
-	
-	<xs:complexType name="OrganizationBaseType" sawsdl:modelReference="http://www.w3.org/ns/org#Organization">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">
-                A collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.
-            </xs:documentation>
-        </xs:annotation>
-        <xs:complexContent>
-            <xs:extension base="AgentBaseType">
-            </xs:extension>
-        </xs:complexContent>    
-    </xs:complexType>
-    
-    <xs:element name="Organization" type="OrganizationType"/> 
-    
-    <xs:complexType name="OrganizationType" sawsdl:modelReference="http://www.w3.org/ns/org#Organization">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">
-                A collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.
-            </xs:documentation>
-        </xs:annotation>
-    
-        <xs:complexContent>
-            <xs:extension base="OrganizationBaseType">
-                <xs:sequence>
-                    <xs:element ref="HasSubOrganization" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/org#hasSubOrganization">
-                        <xs:annotation>
-                            <xs:documentation xml:lang="en">
-                                "Represents hierarchical containment of Organizations or OrganizationalUnits
-                            </xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                    <xs:element ref="SubOrganizationOf" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/org#subOrganizationOf">
-                        <xs:annotation>
-                            <xs:documentation xml:lang="en">
-                                "Represents hierarchical containment of Organizations or OrganizationalUnits
-                            </xs:documentation>
-                        </xs:annotation>
-                    </xs:element>
-                </xs:sequence>
-            </xs:extension>
-        </xs:complexContent>
-    </xs:complexType> 
-
-    <xs:element name="HasSubOrganization" type="OrganizationType"/> 
-    <xs:element name="SubOrganizationOf" type="OrganizationType"/> 
-
-    
 <!-- OrganizationalUnitType -->    
 	<xs:element name="OrganizationalUnitBase" type="OrganizationalUnitBaseType"/> 
 
@@ -309,7 +259,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.1
                             </xs:documentation>
                         </xs:annotation>
                     </xs:element>
-                    <xs:element ref="HasMember" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/org#hasMember">
+                    <xs:element ref="HasMemberPO" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://www.w3.org/ns/org#hasMember">
                         <xs:annotation>
                             <xs:documentation xml:lang="en">
                                 An Organization which is a member of another without being a sub organization, they are independent entities.
@@ -401,7 +351,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.1
     <xs:element name="AlternativeLabel" type="TextType"/>
     <xs:element name="ChangedBy" type="ChangeEventBaseType"/> 
     <xs:element name="Classification" type="CodeType"/>
-    <xs:element name="HasMember" type="PublicOrganizationBaseType"/> 
+    <xs:element name="HasMemberPO" type="PublicOrganizationBaseType"/> 
     <xs:element name="HasUnit" type="OrganizationalUnitBaseType"/>
     <xs:element name="Homepage" type="DocumentType"/>
     <xs:element name="Logo" type="ImageObjectType"/>

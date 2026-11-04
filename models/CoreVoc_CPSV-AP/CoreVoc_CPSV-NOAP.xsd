@@ -208,10 +208,9 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.2.0
         </xs:complexContent>
      </xs:complexType>
 
+	<xs:element name="AgentCPSV" type="AgentCPSVType" />
 	<xs:element name="RuleBase" type="RuleBaseType" />
 	<xs:element name="Rule" type="RuleType" />
-    <!--  The elements -->
-
     <xs:element name="HasRole" type="PublicServiceBaseType"/>
     <xs:element name="Provides" type="PublicServiceBaseType"/>
     <xs:element name="Uses" type="PublicServiceBaseType"/>
