@@ -13,7 +13,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.2.0
 
 <!-- ===== Meta Data==== ================================= -->
     <xs:annotation>
-        <xs:documentation>Core Business Vocabulary</xs:documentation>
+        <xs:documentation xml:lang="en">Core Business Vocabulary</xs:documentation>
         <xs:appinfo>
             <dct:title>Core Business Vocabulary</dct:title>
             <dct:description>This XML schema describes the Core Business Vocabulary as part of SEMIC Core Vocabularies .</dct:description>

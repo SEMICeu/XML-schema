@@ -16,7 +16,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.2.0
   
 <!-- ===== Meta Data==== ================================= -->
     <xs:annotation>
-        <xs:documentation>Core Public Service Vocabulary Application Profile(CPSV-AP)</xs:documentation>
+        <xs:documentation xml:lang="en">Core Public Service Vocabulary Application Profile(CPSV-AP)</xs:documentation>
         <xs:appinfo>
             <dct:title>Core Public Service Vocabulary Application Profile(CPSV-AP)</dct:title>
             <dct:description>CPSV-AP provides a minimal common basis within Europe to describe public services.</dct:description>
@@ -159,17 +159,17 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.2.0
 		                    </xs:documentation>
 		                </xs:annotation>
 		            </xs:element>
-		            <xs:element ref="cv:Spatial" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#physicallyAvailableAt">
-		                <xs:annotation>
-		                    <xs:documentation xml:lang="en">
-		                        A physical location at which a user may interact with the Public Service.
-		                    </xs:documentation>
-		                </xs:annotation>
-		            </xs:element>
 		            <xs:element ref="Produces" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#produces">
 		                <xs:annotation>
 		                    <xs:documentation xml:lang="en">
 		                        The produces property links a Public Service to one or more instances of the Output class which is its range.
+		                    </xs:documentation>
+		                </xs:annotation>
+		            </xs:element>
+		            <xs:element ref="cv:Spatial" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/vocab/cpsv#physicallyAvailableAt">
+		                <xs:annotation>
+		                    <xs:documentation xml:lang="en">
+		                        A physical location at which a user may interact with the Public Service.
 		                    </xs:documentation>
 		                </xs:annotation>
 		            </xs:element>

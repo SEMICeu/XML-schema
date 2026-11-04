@@ -16,7 +16,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.1
 
     <!-- ===== Meta Data==== ================================= -->
     <xs:annotation>
-        <xs:documentation>Core Public Organization Vocabulary</xs:documentation>
+        <xs:documentation xml:lang="en">Core Public Organization Vocabulary</xs:documentation>
         <xs:appinfo>
             <dct:title>Core Public Organization Vocabulary</dct:title>
             <dct:description>This XML schema describes the Core Public Organization Vocabulary as part of SEMIC Core Vocabularies .</dct:description>

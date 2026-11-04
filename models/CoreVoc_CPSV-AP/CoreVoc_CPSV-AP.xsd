@@ -21,7 +21,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="3.2.0
                schemaLocation="CoreVoc_CPSV-NOAP.xsd"/>
 
     <xs:annotation>
-        <xs:documentation>Core Public Service Vocabulary Application Profile(CPSV-AP)</xs:documentation>
+        <xs:documentation xml:lang="en">Core Public Service Vocabulary Application Profile(CPSV-AP)</xs:documentation>
         <xs:appinfo>
             <dct:title>Core Public Service Vocabulary Application Profile(CPSV-AP)</dct:title>
             <dct:description>CPSV-AP provides a minimal common basis within Europe to describe public services.</dct:description>

@@ -15,7 +15,7 @@
 
     <!-- ===== Meta Data==== ================================= -->
     <xs:annotation>
-        <xs:documentation>Core Common Types Vocabulary</xs:documentation>
+        <xs:documentation xml:lang="en">Core Common Types Vocabulary</xs:documentation>
         <xs:appinfo>
             <dct:title>Core Common Types Vocabulary</dct:title>
             <dct:description>This XML schema describes the Core Common Types Vocabularies as part of SEMIC Core Vocabularies .</dct:description>
