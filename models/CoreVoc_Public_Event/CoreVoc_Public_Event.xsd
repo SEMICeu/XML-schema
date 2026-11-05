@@ -72,10 +72,6 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1.0
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>
-
-    <xs:element name="AvailabilityRestriction" type="TemporalEntityType"/> 
-    <xs:element name="OpeningHours" type="TemporalEntityType"/> 
-
     
 <!-- ParticipationType -->
 
@@ -133,7 +129,7 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1.0
     </xs:complexType>
     
     <xs:element name="HasParticipant" type="PublicEventAgentType"/> 
-    <xs:element name="HasTime" type="TemporalEntityType"/> 
+    <xs:element name="HasTime" type="TemporalEntityBaseType"/> 
     
 
 <!-- PublicEventAgentType -->    
@@ -374,50 +370,6 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1.0
     <xs:element name="SubEvent" type="PublicEventBaseType"/>
     <xs:element name="Title" type="TextType"/>
     <xs:element name="Topic" type="CodeType"/>                
-
-    
-<!-- TemporalEntityType -->
-    <xs:element name="TemporalEntityBase" type="TemporalEntityBaseType"/>
-
-    <xs:complexType name="TemporalEntityBaseType" sawsdl:modelReference="http://www.w3.org/2006/time#TemporalEntity">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">
-                A temporal interval or instant.
-            </xs:documentation>
-        </xs:annotation>
-    </xs:complexType>
-        
-    <xs:element name="TemporalEntity" type="TemporalEntityType"/>
-
-    <xs:complexType name="TemporalEntityType" sawsdl:modelReference="http://www.w3.org/2006/time#TemporalEntity">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">
-                A temporal interval or instant.
-            </xs:documentation>
-        </xs:annotation>
-  		<xs:complexContent>
-  			<xs:extension base="TemporalEntityBaseType">
-	  			<xs:sequence>
-		            <xs:element ref="Description" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/description">
-		                <xs:annotation>
-		                    <xs:documentation xml:lang="en">
-		                        A textual representation of the Temporal Entity.
-		                    </xs:documentation>
-		                </xs:annotation>
-		            </xs:element>
-		            <xs:element ref="Frequency" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://data.europa.eu/m8g/frequency">
-		                <xs:annotation>
-		                    <xs:documentation xml:lang="en">
-		                        The recurrence of an instant or period.
-		                    </xs:documentation>
-		                </xs:annotation>
-		            </xs:element>
-		        </xs:sequence>
-  			</xs:extension>
-  		</xs:complexContent>
-    </xs:complexType>
-  
-    <xs:element name="Frequency" type="CodeType"/> 
 
 
 </xs:schema>   

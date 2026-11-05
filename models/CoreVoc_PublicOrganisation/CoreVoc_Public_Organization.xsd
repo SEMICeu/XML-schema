@@ -143,10 +143,6 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.1
             </xs:extension>
         </xs:complexContent>
     </xs:complexType>     
-
-    <xs:element name="AvailabilityRestrictions" type="TemporalEntityBaseType" /> 
-    <xs:element name="OpeningHours" type="TemporalEntityBaseType" />
-   
     
 <!-- OrganizationalUnitType -->    
 	<xs:element name="OrganizationalUnitBase" type="OrganizationalUnitBaseType"/> 
@@ -395,52 +391,6 @@ elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.1.1
         </xs:complexContent>
     </xs:complexType> 
     
-    <xs:element name="Implements" type="ChangeEventBaseType"/>
-
-   
-<!-- TemporalEntityType -->   
-    <xs:element name="TemporalEntityBase" type="TemporalEntityBaseType"/>
-	
-	<xs:complexType name="TemporalEntityBaseType" sawsdl:modelReference="http://www.w3.org/2006/time#TemporalEntity">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">
-                A temporal interval or instant.
-            </xs:documentation>
-        </xs:annotation>
-    </xs:complexType>
-        
-    <xs:element name="TemporalEntity" type="TemporalEntityType"/> 
-
-   <xs:complexType name="TemporalEntityType" sawsdl:modelReference="http://www.w3.org/2006/time#TemporalEntity">
-        <xs:annotation>
-            <xs:documentation xml:lang="en">
-                A temporal interval or instant.
-            </xs:documentation>
-        </xs:annotation>
-    	<xs:complexContent>
-    		<xs:extension base="TemporalEntityBaseType">
-	    		<xs:sequence>
-	                <xs:element ref="Description" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/description">
-	                    <xs:annotation>
-	                        <xs:documentation xml:lang="en">
-	                            A textual representation of the Temporal Entity.
-	                        </xs:documentation>
-	                    </xs:annotation>
-	                </xs:element>
-	                <xs:element ref="Frequency" minOccurs="0" maxOccurs="unbounded" sawsdl:modelReference="http://purl.org/dc/terms/frequency">
-	                    <xs:annotation>
-	                        <xs:documentation xml:lang="en">
-	                            The recurrence of an instant or period.
-	                        </xs:documentation>
-	                    </xs:annotation>
-	                </xs:element>
-	            </xs:sequence>
-    		</xs:extension>
-    	</xs:complexContent>
-    </xs:complexType>     
-
-    <xs:element name="Frequency" type="CodeType" />
-    
-  
+    <xs:element name="Implements" type="ChangeEventBaseType"/>  
     
 </xs:schema>   
