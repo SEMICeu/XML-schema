@@ -72,7 +72,7 @@
         <xs:restriction base="xs:string" />
     </xs:simpleType>
 
-    <xs:simpleType name="InstantType" sawsdl:modelReference="https://www.w3.org/2006/time#Instant">
+    <xs:simpleType name="InstantType" sawsdl:modelReference="http://www.w3.org/2006/time#Instant">
          <xs:annotation>
             <xs:documentation xml:lang="en">
                 A temporal entity with zero extent or duration.
